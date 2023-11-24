@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <stdint.h>
 
 namespace ImgCluster {
     using std::string;
@@ -8,6 +9,7 @@ namespace ImgCluster {
     class Point {
     public:
         int x,y;
+        Point():x(0),y(0){}
         Point(double x, double y) : x(x), y(y) {}
 
         Point operator +(Vector& mov);
@@ -67,6 +69,8 @@ namespace ImgCluster {
     // I have declared this as a struct and not a class, due to concerns of cases
     // where they may be a need to define custom traversing logic.
     struct Region{
+        string name;
+        uint8_t colorCode[3];
         Regions children;
         bool isTerminal;
 
@@ -91,7 +95,8 @@ namespace ImgCluster {
     public:
         virtual Benchmark iterate(const Region& map, const Images& imageList,
                                   const ImageClusters& previousCluster,
-                                  const Rectangle& prevScreen, const Rectangle& newScreen);
+                                  const Rectangle& prevScreenRegion, const Rectangle& newScreenRegion,
+                                  const Rectangle& screenResolution);
     };
 }
 

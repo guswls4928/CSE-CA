@@ -1,0 +1,10 @@
+﻿  library.cpp
+C:\Users\mh7cp\Desktop\projects_inprogress\ImgTest\ImgTest\clusterInterface.h(15,38): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mh7cp\Desktop\projects_inprogress\ImgTest\ImgTest\clusterInterface.h(15,44): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mh7cp\Desktop\projects_inprogress\ImgTest\ImgTest\library.h(15,2): warning C4091: 'typedef ': ignored on left of 'LabeledQueue' when no variable is declared
+  main.cpp
+C:\Users\mh7cp\Desktop\projects_inprogress\ImgTest\ImgTest\clusterInterface.h(15,38): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mh7cp\Desktop\projects_inprogress\ImgTest\ImgTest\clusterInterface.h(15,44): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\mh7cp\Desktop\projects_inprogress\ImgTest\ImgTest\library.h(15,2): warning C4091: 'typedef ': ignored on left of 'LabeledQueue' when no variable is declared
+  Generating Code...
+  ImgTest.vcxproj -> C:\Users\mh7cp\Desktop\projects_inprogress\ImgTest\x64\Debug\ImgTest.exe

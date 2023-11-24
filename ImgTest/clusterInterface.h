@@ -1,0 +1,8 @@
+//
+// Created by mh7cp on 2023-11-25.
+//
+
+#ifndef IMGTEST_CLUSTERINTERFACE_H
+#define IMGTEST_CLUSTERINTERFACE_H
+
+#endif //IMGTEST_CLUSTERINTERFACE_H
