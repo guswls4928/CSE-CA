@@ -43,7 +43,7 @@ namespace ImgCluster {
             x = p1.x > p2.x ? p1.x : p2.x;
             y = p1.y > p2.y ? p1.y : p2.y;
         }
-        Point getpoint(int iftop0, int ifleft0){
+        Point getPoint(int iftop0, int ifleft0){
             return Point(iftop0 ? x+w : x, ifleft0 ? y+h : y);
         }
         int x,y;
