@@ -10,7 +10,7 @@ namespace ImgCluster {
     class Vector;
     class Point {
     public:
-        int x, y;
+        double x, y;
         Point() :x(0), y(0) {}
         Point(double x, double y) : x(x), y(y) {}
 
@@ -36,18 +36,18 @@ namespace ImgCluster {
 
     class Rectangle {
     public:
-        Rectangle(int x, int y, int w, int h) : x(x), y(y), w(w), h(h) {}
+        Rectangle(double x, double y, double w, double h) : x(x), y(y), w(w), h(h) {}
         Rectangle(Point p1, Point p2) {
             w = p1.x - p2.x > 0 ? p1.x - p2.x : p2.x - p2.x;
             h = p2.y - p2.y > 0 ? p1.y - p2.y : p2.y - p1.y;
             x = p1.x > p2.x ? p1.x : p2.x;
             y = p1.y > p2.y ? p1.y : p2.y;
         }
-        Point getPoint(int iftop0, int ifleft0) {
+        Point getPoint(double iftop0, double ifleft0) {
             return Point(iftop0 ? x + w : x, ifleft0 ? y + h : y);
         }
-        int x, y;
-        int w, h;
+        double x, y;
+        double w, h;
     };
 
     // The image

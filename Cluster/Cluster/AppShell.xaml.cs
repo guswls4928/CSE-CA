@@ -1,9 +1,10 @@
-﻿namespace Cluster;
-
-public partial class AppShell : Shell
+﻿namespace Cluster
 {
-	public AppShell()
-	{
-		InitializeComponent();
-	}
+    public partial class AppShell : Shell
+    {
+        public AppShell()
+        {
+            InitializeComponent();
+        }
+    }
 }
