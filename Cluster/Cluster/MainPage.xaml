@@ -9,9 +9,16 @@
             Padding="30,0"
             Spacing="25">
             <maps:Map x:Name="MyMap"
-                      HeightRequest="300"
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="FillAndExpand" />
+          HeightRequest="300"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand">
+                <maps:Map.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnMapTapped"/>
+                </maps:Map.GestureRecognizers>
+            </maps:Map>
+
+            <Button Pressed="onv1">
+            </Button>
         </VerticalStackLayout>
     </ScrollView>
 

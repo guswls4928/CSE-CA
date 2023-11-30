@@ -1,0 +1,1 @@
+C:\Users\lecti\Documents\CSE-CA\Cluster\Cluster\Cluster.csproj;x64
