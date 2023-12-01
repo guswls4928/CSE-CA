@@ -34851,24 +34851,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lecti\\.nuget\\packages\\": {},
+    "C:\\Users\\mh7cp\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
+      "projectUniqueName": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
       "projectName": "Cluster",
-      "projectPath": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-      "packagesPath": "C:\\Users\\lecti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\obj\\",
+      "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
+      "packagesPath": "C:\\Users\\mh7cp\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\Cluster\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\lecti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mh7cp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
