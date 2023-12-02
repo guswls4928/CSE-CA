@@ -141,6 +141,17 @@ namespace Cluster
 
         private void Button_Pressed(object sender, EventArgs e)
         {
+            var l = new List<Algorithm.ImageNode>();
+            var p = new Algorithm.Point(); p.X = 37.541; p.Y = 126.986;
+            var img = new Algorithm.ImageNode();
+            img.FileName = "dotnet_bot.png";
+            img.Position = p;
+            l.Add(img);
+            var a = new Algorithm.AlgorithmInterface();
+
+            var b = a.Initialize(l, (uint)DisplayMap.Width, (uint)DisplayMap.Height);
+            
+
             var pin = new Pin
             {
                 Label = "Some Label",

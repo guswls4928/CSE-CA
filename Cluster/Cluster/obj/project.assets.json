@@ -2334,6 +2334,15 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-android34.0/android-arm": {
@@ -4668,6 +4677,15 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -7004,6 +7022,15 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-android34.0/android-x64": {
@@ -9338,6 +9365,15 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -11674,6 +11710,15 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-android34.0/iossimulator-x64": {
@@ -14008,6 +14053,15 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -16344,6 +16398,15 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-android34.0/win10-x64": {
@@ -18679,6 +18742,15 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-ios17.0": {
@@ -19129,6 +19201,15 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -19581,6 +19662,15 @@
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-ios17.0/android-arm64": {
@@ -20031,6 +20121,15 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -20483,6 +20582,15 @@
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-ios17.0/android-x86": {
@@ -20933,6 +21041,15 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -21385,6 +21502,15 @@
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-ios17.0/maccatalyst-x64": {
@@ -21835,6 +21961,15 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -22287,6 +22422,15 @@
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-maccatalyst17.0": {
@@ -22737,6 +22881,15 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -23189,6 +23342,15 @@
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-maccatalyst17.0/android-arm64": {
@@ -23639,6 +23801,15 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -24091,6 +24262,15 @@
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-maccatalyst17.0/android-x86": {
@@ -24541,6 +24721,15 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -24993,6 +25182,15 @@
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-maccatalyst17.0/maccatalyst-x64": {
@@ -25444,6 +25642,15 @@
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-maccatalyst17.0/win10-x64": {
@@ -25894,6 +26101,15 @@
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -26489,6 +26705,15 @@
             "rid": "win10-x86"
           }
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-windows10.0.19041/android-arm": {
@@ -27054,6 +27279,15 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -27621,6 +27855,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-windows10.0.19041/android-x64": {
@@ -28186,6 +28429,15 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -28753,6 +29005,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-windows10.0.19041/iossimulator-x64": {
@@ -29319,6 +29580,15 @@
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        }
       }
     },
     "net8.0-windows10.0.19041/maccatalyst-x64": {
@@ -29884,6 +30154,15 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     },
@@ -30456,6 +30735,15 @@
         "build": {
           "buildTransitive/Microsoft.WindowsAppSDK.props": {},
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
+        }
+      },
+      "DefaultAlgorithm/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DefaultAlgorithm.dll": {}
         }
       }
     }
@@ -34815,10 +35103,16 @@
         "xamarin.kotlinx.coroutines.core.jvm.1.7.2.1.nupkg.sha512",
         "xamarin.kotlinx.coroutines.core.jvm.nuspec"
       ]
+    },
+    "DefaultAlgorithm/1.0.0": {
+      "type": "project",
+      "path": "../DefaultAlgorithm/DefaultAlgorithm.vcxproj",
+      "msbuildProject": "../DefaultAlgorithm/DefaultAlgorithm.vcxproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-android34.0": [
+      "DefaultAlgorithm >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
       "Microsoft.Maui.Controls >= 8.0.3",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.3",
@@ -34827,6 +35121,7 @@
       "Microsoft.NET.ILLink.Tasks >= 8.0.0"
     ],
     "net8.0-ios17.0": [
+      "DefaultAlgorithm >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
       "Microsoft.Maui.Controls >= 8.0.3",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.3",
@@ -34835,6 +35130,7 @@
       "Microsoft.NET.ILLink.Tasks >= 8.0.0"
     ],
     "net8.0-maccatalyst17.0": [
+      "DefaultAlgorithm >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
       "Microsoft.Maui.Controls >= 8.0.3",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.3",
@@ -34843,6 +35139,7 @@
       "Microsoft.NET.ILLink.Tasks >= 8.0.0"
     ],
     "net8.0-windows10.0.19041": [
+      "DefaultAlgorithm >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 8.0.0",
       "Microsoft.Maui.Controls >= 8.0.3",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.3",
@@ -34886,19 +35183,35 @@
       "frameworks": {
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj": {
+              "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj"
+            }
+          }
         },
         "net8.0-ios17.0": {
           "targetAlias": "net8.0-ios",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj": {
+              "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj"
+            }
+          }
         },
         "net8.0-maccatalyst17.0": {
           "targetAlias": "net8.0-maccatalyst",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj": {
+              "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj"
+            }
+          }
         },
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj": {
+              "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj"
+            }
+          }
         }
       },
       "warningProperties": {
