@@ -74,6 +74,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="AlgolSelect.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Update="Platforms\Android\native-libs\arm64-v8a\libDefaultAlgorithm.so">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>

@@ -29,11 +29,21 @@
 
 
         <!-- Other UI Elements in a Vertical StackLayout -->
-        <VerticalStackLayout Grid.Row="1">
-            <Label x:Name="lblZoomLevel" Text="Zoom Level:" />
-            <Label x:Name="lblCenterPosition" Text="Center Position:" />
-            <Label x:Name="callFunc" Text="FALSE" />
-            <Button Text="Add Marker" Pressed="Button_Pressed"/>
-        </VerticalStackLayout>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout Grid.Column="0">
+                <Label x:Name="lblDisplayDimensions" Text="Zoom Level:" />
+                <Label x:Name="lblCenterPosition" Text="Center Position:" />
+                <Label x:Name="lblState" Text="N/A" />
+                <Label x:Name="invokeStat" Text=""/>
+            </VerticalStackLayout>
+
+            <Button Grid.Column="1" Text="⚙️" Pressed="Button_Pressed" HorizontalOptions="End" BackgroundColor="Black"/>
+        </Grid>
+
     </Grid>
 </ContentPage>

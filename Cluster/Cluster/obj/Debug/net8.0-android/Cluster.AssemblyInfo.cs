@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cluster")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+506ad73112dc2c48d7a01578582f1079f25667af")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+75875dc1a99e52bd05eb9dbd0d7ed1b91d8b26b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cluster")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cluster")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

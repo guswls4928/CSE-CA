@@ -16,6 +16,12 @@ build_property.ProjectDir = C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
+[C:/Users/mh7cp/Desktop/projects_inprogress/Algo/CSE-CA/Cluster/Cluster/AlgolSelect.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Cluster.AlgolSelect.xaml
+build_metadata.AdditionalFiles.TargetPath = AlgolSelect.xaml
+build_metadata.AdditionalFiles.RelativePath = AlgolSelect.xaml
+
 [C:/Users/mh7cp/Desktop/projects_inprogress/Algo/CSE-CA/Cluster/Cluster/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cluster.App.xaml

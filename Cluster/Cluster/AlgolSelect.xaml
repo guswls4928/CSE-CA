@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cluster.AlgolSelect"
+             Title="AlgolSelect">
+
+    <VerticalStackLayout Spacing="20" Padding="30">
+
+        <!-- Load Button -->
+        <Button x:Name="loadButton" Text="Load Images" Clicked="OnLoadButtonClicked" />
+
+        <!-- Image Count Label -->
+        <Label x:Name="imageCountLabel" Text="No images loaded" />
+
+        <!-- Algorithm Dropdown -->
+        <Picker x:Name="algorithmPicker" Title="Select Algorithm">
+            <!-- Items will be added in the code behind -->
+        </Picker>
+
+        <!-- Go Button -->
+        <Button x:Name="goButton" Text="Go" Clicked="OnGoButtonClicked" IsEnabled="False" />
+
+    </VerticalStackLayout>
+</ContentPage>

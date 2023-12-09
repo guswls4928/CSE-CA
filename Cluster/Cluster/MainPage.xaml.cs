@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Controls.Maps;
+﻿using Algorithm;
+using Microsoft.Maui.Controls.Maps;
 using Microsoft.Maui.Maps;
 using System.Diagnostics.Metrics;
 using System.Timers;
@@ -7,6 +8,9 @@ namespace Cluster
 {
     public partial class MainPage : ContentPage
     {
+
+        private Algorithm.AlgorithmInterface activeAlgorithm;
+
 
         private System.Threading.Timer _pollingTimer;
         private MapSpan _lastMapSpan;
@@ -50,6 +54,7 @@ namespace Cluster
             }
         }
 
+
         private void SetupPollingTimer()
         {
             _pollingTimer = new System.Threading.Timer(CheckMapState, null, 0, 5);
@@ -68,15 +73,21 @@ namespace Cluster
                         DisplayMap.MoveToRegion(new MapSpan(new Location(37.541, 126.986), 35, 42));
                         mapBg.BackgroundColor = Colors.Red;
                         mapBg.Opacity = 0.6;
+                        lblState.Text = "INVALID_REGION";
+                        lblState.TextColor = Colors.Red;
                     }
                     else
                     {
                         mapBg.BackgroundColor = Colors.Blue;
                         mapBg.Opacity = 0.3;
                         _lastValidSpan = currentSpan;
-                        lblZoomLevel.Text = $"WidthLong:{DisplayMap.VisibleRegion.LongitudeDegrees}\n" +
-                        $"HeightLat:{DisplayMap.VisibleRegion.LatitudeDegrees}";
 
+                        lblDisplayDimensions.Text = $"DP:= (W={DisplayMap.VisibleRegion.LongitudeDegrees:F4}°  " +
+                        $"H={DisplayMap.VisibleRegion.LatitudeDegrees:F4}°)";
+                        lblCenterPosition.Text = $"CEN:= {GetViewportCenter()}";
+                        lblState.Text = "SHIFTING";
+                        lblState.TextColor = Colors.Blue;
+                        invokeStat.TextColor = Colors.Blue;
                         foreach (var item in OverlayCanvas.Children)
                         {
                             if (item is ImageCluster cluster)
@@ -96,6 +107,8 @@ namespace Cluster
                     mapBg.BackgroundColor = Colors.Black;
                     mapBg.Opacity = 0.3;
                     _interactionFlag = false;
+                    lblState.Text = "INVOKING";
+                    lblState.TextColor = Colors.Purple;
                     OnMapInteractionEnded();
                 }
             });
@@ -112,71 +125,66 @@ namespace Cluster
         {
             // Implement what should happen when map interaction ends
             // This method will be called after 0.2 seconds of inactivity following an interaction
+            if (activeAlgorithm != null)
+            {
+                var iterBench = activeAlgorithm.Iterate(DisplayMap.VisibleRegion);
+                SetInvokeStatus(iterBench, false);
+                OverlayCanvas.Children.Clear();
+                AddPins(iterBench);
+            }
+
             mapBg.BackgroundColor = Colors.Transparent;
             mapBg.Opacity = 0.3;
-        }
-
-
-        private void OnMapUpdateTimerElapsed(object sender, ElapsedEventArgs e)
-        {
-            UpdateMapInfo();
-        }
-
-        private void UpdateMapInfo()
-        {
-#pragma warning disable CS0612 // Type or member is obsolete
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                if (DisplayMap.VisibleRegion != null)
-                {
-                    lblZoomLevel.Text = $"Zoom Level: {GetZoomLevel()}";
-                    lblCenterPosition.Text = $"Center Position: {GetViewportCenter()}";
-                }
-            });
-#pragma warning restore CS0612 // Type or member is obsolete
-        }
-
-        private double GetZoomLevel()
-        {
-            var region = DisplayMap.VisibleRegion;
-            if (region == null) return 0;
-
-            // Example calculation for zoom level
-            var zoomLevel = Math.Log(360 / region.LatitudeDegrees) / Math.Log(2);
-            return zoomLevel;
+            lblState.Text = "IDLE";
+            lblState.TextColor = Colors.Green;
         }
 
         private (double Latitude, double Longitude) GetViewportCenter()
         {
             var center = DisplayMap.VisibleRegion?.Center;
             if (center == null) return (0, 0);
-            return (center.Latitude, center.Longitude);
+
+            int decimalPlaces = 4; // Number of decimal places you want
+            double roundedLatitude = Math.Round(center.Latitude, decimalPlaces);
+            double roundedLongitude = Math.Round(center.Longitude, decimalPlaces);
+
+            return (roundedLatitude, roundedLongitude);
         }
 
-        private void Button_Pressed(object sender, EventArgs e)
+        private async void Button_Pressed(object sender, EventArgs e)
         {
-            var l = new List<Algorithm.ImageNode>();
-            var p = new Algorithm.Point(); p.Y = 37.541; p.X = 126.986;
-            var img = new Algorithm.ImageNode();
-            img.FileName = "dotnet_bot.png";
-            img.Position = p;
+            bool answer = await DisplayAlert("Confirm", "Proceeding will dispose previous algorithm. Proceed?", "Yes", "No");
+            if (answer)
+            {
+                var popupPage = new AlgolSelect();
+                await Navigation.PushModalAsync(popupPage);
 
-            var p2 = new Algorithm.Point(); p2.Y = 40; p2.X = 130;
-            var img2 = new Algorithm.ImageNode();
-            img2.FileName = "dotnet_bot.png";
-            img2.Position = p2;
+                var result = await popupPage.WaitForResultAsync();
+                if (result != null)
+                {
+                    var returnedList = result.Item1;
+                    var returnedAlgol = result.Item2;
+                    
+                    if (returnedAlgol != null && returnedList != null && returnedList.Count > 0)
+                    {
+                        if (activeAlgorithm != null) { activeAlgorithm.Dispose(); }
+                        activeAlgorithm = returnedAlgol;
 
-            l.Add(img);
-            l.Add(img2);
-
-            var a = new Algorithm.AlgorithmInterface();
-
-            var b = a.Initialize(l, (uint)DisplayMap.Width, (uint)DisplayMap.Height);
-
-            var c = a.Iterate(DisplayMap.VisibleRegion);
-
-            AddPins(c);
+                        OverlayCanvas.Children.Clear();
+                        var initret = returnedAlgol.Initialize(returnedList, (uint)DisplayMap.Width, (uint)DisplayMap.Height);
+                        SetInvokeStatus(initret, true);
+                        AddPins(initret);
+                    }
+                }
+            }
         }
+
+        private void SetInvokeStatus(Algorithm.Benchmark benchmark, bool isInit)
+        {
+            invokeStat.Text = $"CALLTYPE: {(isInit? "INIT": "ITER")}  Internal Elapsed: {benchmark.Elapsed}ms\nComp: {benchmark.CompareCount}t  MaxMem: {benchmark.MaxNodes}nodes\nDeviation: {benchmark.Deviation}";
+            invokeStat.TextColor = Colors.Red;
+        }
+
     }
 
 }

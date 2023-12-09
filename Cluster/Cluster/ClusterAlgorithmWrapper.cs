@@ -72,57 +72,15 @@ namespace Extern
     #endregion
 
 
-    internal partial class ClusterAlgorithmWrapper
+    internal abstract partial class ClusterAlgorithmWrapper
     {
-        // Define the library names
-        public const string LibraryName0 = "libDefaultAlgorithm.so"; // and so on for other libraries
-
-        [LibraryImport(LibraryName0)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
-        public static partial SAMPLE testFunc(double p1, double p2);
-
-        // Define delegates matching the signatures of the C++ functions
-        [LibraryImport(LibraryName0)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
-        public static partial IntPtr createAlgoClass();
-
-        [LibraryImport(LibraryName0)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
-        public static partial Benchmark InitAlgorithm(ImgArray imageList, uint screenWidth, uint screenHeight, IntPtr algoClass);
-
-        [LibraryImport(LibraryName0)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
-        public static partial Benchmark IterateAlgorithm(IntPtr algoClass, Rectangle screenRegion);
-
-        [LibraryImport(LibraryName0)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
-        public static partial void DeleteAlgorithm(IntPtr algoClass);
-
         public IntPtr _algorithmInstance;
 
-        public ClusterAlgorithmWrapper()
-        {
-            _algorithmInstance = createAlgoClass();
-        }
+        public abstract Benchmark Init(ImgArray imageList, uint screenWidth, uint screenHeight);
 
-        public Benchmark Init(ImgArray imageList, uint screenWidth, uint screenHeight)
-        {
-            return InitAlgorithm(imageList, screenWidth, screenHeight, _algorithmInstance);
-        }
+        public abstract Benchmark Iterate(Rectangle screenRegion);
 
-        public Benchmark Iterate(Rectangle screenRegion)
-        {
-            return IterateAlgorithm(_algorithmInstance, screenRegion);
-        }
-
-        public void Dispose()
-        {
-            if (_algorithmInstance != IntPtr.Zero)
-            {
-                DeleteAlgorithm(_algorithmInstance);
-                _algorithmInstance = IntPtr.Zero;
-            }
-        }
+        public abstract void Dispose();
 
 
         public static IntPtr MarshalImgArrayToUnmanaged(List<ImageNode> imageNodes)

@@ -12,8 +12,18 @@ public:
         sheight = screenHeight;
         imgList = imageList;
         Benchmark b;
-        b.compareCnt = 504;
-        b.deviation = 100;
+        ImageClusters clusters;
+        for (const ImageNode& img : imgList) {
+            ImageCluster tmp;
+            tmp.count = 1;
+            tmp.pos.x = img.pos.x;
+            tmp.pos.y = img.pos.y;
+            tmp.repr = img;
+            clusters.push_back(tmp);
+        }
+        b.clusters = clusters;
+        b.compareCnt = 709;
+        b.deviation = 127;
         b.elapsed = 5.888;
         b.maxNodes = 304;
         return b;

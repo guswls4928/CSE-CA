@@ -43,11 +43,10 @@ namespace Algorithm
 
     internal class AlgorithmInterface : IDisposable
     {
-        private readonly IntPtr _algorithmInstance;
-
-        public AlgorithmInterface()
+        ClusterAlgorithmWrapper clusterAlgorithm;
+        public AlgorithmInterface(ClusterAlgorithmWrapper clusterAlgorithm)
         {
-            _algorithmInstance = ClusterAlgorithmWrapper.createAlgoClass();
+            this.clusterAlgorithm = clusterAlgorithm;
         }
 
         public Benchmark Initialize(List<ImageNode> imageNodes, uint screenWidth, uint screenHeight)
@@ -64,10 +63,8 @@ namespace Algorithm
                 count = imageNodes.Count
             };
 
-            
 
-            var benchmark = ClusterAlgorithmWrapper.InitAlgorithm(imgArray, screenWidth, screenHeight, _algorithmInstance);
-            var t1 = ClusterAlgorithmWrapper.testFunc(9.7, 2.3);
+            var benchmark = clusterAlgorithm.Init(imgArray, screenWidth, screenHeight);
             // Free unmanaged resources
             foreach (var unmanagedNode in unmanagedImageNodes)
             {
@@ -88,7 +85,7 @@ namespace Algorithm
                 h = span.LatitudeDegrees
             };
 
-            var benchmark = ClusterAlgorithmWrapper.IterateAlgorithm(_algorithmInstance, unmanagedScreenRegion);
+            var benchmark = clusterAlgorithm.Iterate(unmanagedScreenRegion);
 
             return ConvertToManagedBenchmark(benchmark);
         }
@@ -119,10 +116,7 @@ namespace Algorithm
 
         public void Dispose()
         {
-            if (_algorithmInstance != IntPtr.Zero)
-            {
-                ClusterAlgorithmWrapper.DeleteAlgorithm(_algorithmInstance);
-            }
+            clusterAlgorithm.Dispose();
         }
     }
 }
