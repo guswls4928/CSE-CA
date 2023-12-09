@@ -36,6 +36,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -69,11 +70,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\DefaultAlgorithm\DefaultAlgorithm.vcxproj" />
+	  <Folder Include="Platforms\Android\native-libs\arm64-v8a\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Platforms\Android\native-libs\arm64-v8a\" />
+	  <None Update="Platforms\Android\native-libs\arm64-v8a\libDefaultAlgorithm.so">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Platforms\Android\native-libs\arm64-v8a\libDefaultAlgorithm.so.recipe">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionClusterHideInfoBar="True" /></VisualStudio></ProjectExtensions>

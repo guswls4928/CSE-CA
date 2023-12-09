@@ -1,4 +1,5 @@
 ﻿using Extern;
+using Microsoft.Maui.Maps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,7 @@ namespace Algorithm
 
         public AlgorithmInterface()
         {
-            _algorithmInstance = ClusterAlgorithmWrapper.CreateAlgoClass();
+            _algorithmInstance = ClusterAlgorithmWrapper.createAlgoClass();
         }
 
         public Benchmark Initialize(List<ImageNode> imageNodes, uint screenWidth, uint screenHeight)
@@ -63,8 +64,10 @@ namespace Algorithm
                 count = imageNodes.Count
             };
 
-            var benchmark = ClusterAlgorithmWrapper.InitAlgorithm(imgArray, screenWidth, screenHeight, _algorithmInstance);
+            
 
+            var benchmark = ClusterAlgorithmWrapper.InitAlgorithm(imgArray, screenWidth, screenHeight, _algorithmInstance);
+            var t1 = ClusterAlgorithmWrapper.testFunc(9.7, 2.3);
             // Free unmanaged resources
             foreach (var unmanagedNode in unmanagedImageNodes)
             {
@@ -75,14 +78,14 @@ namespace Algorithm
             return ConvertToManagedBenchmark(benchmark);
         }
 
-        public Benchmark Iterate(Rectangle screenRegion)
+        public Benchmark Iterate(MapSpan span)
         {
             var unmanagedScreenRegion = new Extern.Rectangle
             {
-                x = screenRegion.X,
-                y = screenRegion.Y,
-                w = screenRegion.Width,
-                h = screenRegion.Height
+                x = span.Center.Longitude - span.LongitudeDegrees / 2,
+                y = span.Center.Latitude - span.LatitudeDegrees / 2,
+                w = span.LongitudeDegrees,
+                h = span.LatitudeDegrees
             };
 
             var benchmark = ClusterAlgorithmWrapper.IterateAlgorithm(_algorithmInstance, unmanagedScreenRegion);

@@ -3,44 +3,65 @@
 
 extern "C" {
     namespace Wrapper {
-
+#pragma pack(push, 1)
         struct Point {
             double x, y;
         };
+#pragma pack(pop)
 
+#pragma pack(push, 1)
         struct ImageNode {
             const char* fileName;
             Point pos;
         };
+#pragma pack(pop)
 
+#pragma pack(push, 1)
         struct Rectangle {
             double x, y;
             double w, h;
         };
+#pragma pack(pop)
 
+#pragma pack(push, 1)
         struct ImgArray {
             ImageNode* head;
-            size_t count;
+            int count;
         };
+#pragma pack(pop)
 
+#pragma pack(push, 1)
         struct ImageCluster {
             ImageNode repr;
             Point pos;
             int count;
         };
+#pragma pack(pop)
 
+#pragma pack(push, 1)
         struct ClusterArray {
             ImageCluster* head;
-            size_t count;
+            int count;
         };
+#pragma pack(pop)
 
+#pragma pack(push, 1)
         struct Benchmark {
-            unsigned long compareCnt;
-            unsigned long maxNodes;
+            int compareCnt;
+            int maxNodes;
             int elapsed;
             double deviation;
             ClusterArray clusters;
         };
+#pragma pack(pop)
+
+#pragma pack(push, 1)
+        struct SAMPLE {
+            double a;
+            int b;
+            double c;
+        };
+#pragma pack(pop)
 
         ImgCluster::Rectangle convertRect(struct Rectangle rect) {
             return ImgCluster::Rectangle(rect.x, rect.y, rect.w, rect.h);
@@ -61,19 +82,30 @@ extern "C" {
                             {b.clusters[i].pos.x, b.clusters[i].pos.y},
                             b.clusters[i].count };
             }
+            ClusterArray arr;
+            arr.count = b.clusters.size();
+            arr.head = alloc;
+            Benchmark ret;
+            ret.clusters = arr;
+            ret.compareCnt = b.compareCnt;
+            ret.maxNodes = b.maxNodes;
+            ret.deviation = b.deviation;
+            ret.elapsed = b.elapsed;
 
-            return Benchmark{
-                b.compareCnt,
-                b.maxNodes,
-                b.elapsed,
-                b.deviation,
-                {alloc, b.clusters.size()}
-            };
+            return ret;
         }
 
         void* createAlgoClass() {
             return new SampleAlgorithm();
             //return new int[4];
+        }
+
+        SAMPLE testFunc(double p1, double p2) { 
+            SAMPLE t;
+            t.a = p1;
+            t.c = p2;
+            t.b = 7;
+            return t;
         }
 
         Benchmark InitAlgorithm(ImgArray imageList, unsigned int screenWidth, unsigned int screenHeight, void* algoClass) {
@@ -87,6 +119,5 @@ extern "C" {
         void DeleteAlgorithm(void* algoClass) {
             delete ((SampleAlgorithm*)algoClass);
         }
-
     }
 }

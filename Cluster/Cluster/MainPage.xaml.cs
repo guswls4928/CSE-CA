@@ -146,11 +146,20 @@ namespace Cluster
             var img = new Algorithm.ImageNode();
             img.FileName = "dotnet_bot.png";
             img.Position = p;
+
+            var p2 = new Algorithm.Point(); p.X = 40; p.Y = 130;
+            var img2 = new Algorithm.ImageNode();
+            img.FileName = "dotnet_bot2.png";
+            img.Position = p2;
+
             l.Add(img);
+            //l.Add(img2);
+
             var a = new Algorithm.AlgorithmInterface();
 
             var b = a.Initialize(l, (uint)DisplayMap.Width, (uint)DisplayMap.Height);
-            
+
+            var c = a.Iterate(DisplayMap.VisibleRegion);
 
             var pin = new Pin
             {

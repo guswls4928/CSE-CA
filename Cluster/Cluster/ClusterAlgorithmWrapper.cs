@@ -9,35 +9,42 @@ using System.Threading.Tasks;
 namespace Extern
 {
     #region compatClasses
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     struct Rectangle
     {
         public double x, y;
         public double w, h;
     };
 
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     struct Point
     {
         public double x, y;
     }
 
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     struct ImageNode
     {
         public IntPtr fileName; // Points to a char array (C-style string) in unmanaged memory
         public Point pos;
     }
 
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     struct ImgArray
     {
         public IntPtr head; // Points to an array of ImageNode in unmanaged memory
         public int count;
     };
 
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     struct ClusterArray
     {
         public IntPtr head; // Points to an array of ImageCluster in unmanaged memory
         public int count;
     };
 
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     struct ImageCluster
     {
         public ImageNode repr;
@@ -45,6 +52,7 @@ namespace Extern
         public int count;
     };
 
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     struct Benchmark
     {
         public int compareCnt;
@@ -53,20 +61,34 @@ namespace Extern
         public double deviation;
         public ClusterArray clusters;
     }
+
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    struct SAMPLE
+    {
+        double a;
+        int b;
+        double c;
+    };
     #endregion
 
 
-    internal class ClusterAlgorithmWrapper
+    internal partial class ClusterAlgorithmWrapper
     {
         // Define the library names
         public const string LibraryName0 = "libDefaultAlgorithm.so"; // and so on for other libraries
 
-        // Define delegates matching the signatures of the C++ functions
-        [DllImport(LibraryName0, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr CreateAlgoClass();
+        [LibraryImport(LibraryName0)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial SAMPLE testFunc(double p1, double p2);
 
-        [DllImport(LibraryName0, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Benchmark InitAlgorithm(ImgArray imageList, uint screenWidth, uint screenHeight, IntPtr algoClass);
+        // Define delegates matching the signatures of the C++ functions
+        [LibraryImport(LibraryName0)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial IntPtr createAlgoClass();
+
+        [LibraryImport(LibraryName0)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial Benchmark InitAlgorithm(ImgArray imageList, uint screenWidth, uint screenHeight, IntPtr algoClass);
 
         [DllImport(LibraryName0, CallingConvention = CallingConvention.Cdecl)]
         public static extern Benchmark IterateAlgorithm(IntPtr algoClass, Rectangle screenRegion);
@@ -78,7 +100,7 @@ namespace Extern
 
         public ClusterAlgorithmWrapper()
         {
-            _algorithmInstance = CreateAlgoClass();
+            _algorithmInstance = createAlgoClass();
         }
 
         public Benchmark Init(ImgArray imageList, uint screenWidth, uint screenHeight)

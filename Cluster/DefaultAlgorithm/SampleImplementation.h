@@ -11,18 +11,12 @@ public:
         swidth = screenWidth;
         sheight = screenHeight;
         imgList = imageList;
-        return Benchmark{
-            //compareCnt
-            400,
-            //maxNodes
-            (unsigned int)imgList.size(),
-            //elapsed
-            20,
-            //deviation
-            0,
-            //clusters
-            {}
-        };
+        Benchmark b;
+        b.compareCnt = 504;
+        b.deviation = 100;
+        b.elapsed = 5.888;
+        b.maxNodes = 304;
+        return b;
     }
 
     Benchmark iterate(const Rectangle& screenRegion) {

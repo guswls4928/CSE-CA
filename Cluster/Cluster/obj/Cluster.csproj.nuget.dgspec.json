@@ -36,35 +36,19 @@
         "frameworks": {
           "net8.0-android34.0": {
             "targetAlias": "net8.0-android",
-            "projectReferences": {
-              "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj": {
-                "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj"
-              }
-            }
+            "projectReferences": {}
           },
           "net8.0-ios17.0": {
             "targetAlias": "net8.0-ios",
-            "projectReferences": {
-              "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj": {
-                "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj"
-              }
-            }
+            "projectReferences": {}
           },
           "net8.0-maccatalyst17.0": {
             "targetAlias": "net8.0-maccatalyst",
-            "projectReferences": {
-              "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj": {
-                "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj"
-              }
-            }
+            "projectReferences": {}
           },
           "net8.0-windows10.0.19041": {
             "targetAlias": "net8.0-windows10.0.19041.0",
-            "projectReferences": {
-              "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj": {
-                "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -302,21 +286,6 @@
         "win10-x64": {
           "#import": []
         }
-      }
-    },
-    "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj": {
-      "restore": {
-        "projectUniqueName": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj",
-        "projectName": "DefaultAlgorithm",
-        "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\DefaultAlgorithm\\DefaultAlgorithm.vcxproj",
-        "frameworks": {
-          "native": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "native": {}
       }
     }
   }
