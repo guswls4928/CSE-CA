@@ -21,19 +21,21 @@ public:
 
     Benchmark iterate(const Rectangle& screenRegion) {
         ImageClusters clusters;
-        for (const ImageNode& img : imgList)
-            clusters.push_back(ImageCluster{ img, img.pos, 1 });
-        return Benchmark{
-            //compareCnt
-            200,
-            //maxNodes
-            (unsigned int)imgList.size(),
-            //elapsed
-            10,
-            //deviation
-            7.7,
-            //clusters
-            clusters
-        };
+        for (const ImageNode& img : imgList) {
+            ImageCluster tmp;
+            tmp.count = 1;
+            tmp.pos.x = img.pos.x;
+            tmp.pos.y = img.pos.y;
+            tmp.repr = img;
+            clusters.push_back(tmp);
+        }
+
+        Benchmark ret;
+        ret.compareCnt = 200;
+        ret.deviation = 3.3;
+        ret.elapsed = 3.65;
+        ret.maxNodes = 70;
+        ret.clusters = clusters;
+        return ret;
     }
 };

@@ -24,7 +24,7 @@
         <!-- Custom overlay canvas -->
         <AbsoluteLayout x:Name="OverlayCanvas" Grid.Row="0" IsVisible="True" BackgroundColor="Transparent" IsClippedToBounds="True">
             
-            <local:ImageCluster ImageSource="dotnet_bot.png"/>
+            <!--local:ImageCluster ImageSource="dotnet_bot.png"/-->
         </AbsoluteLayout>
 
 

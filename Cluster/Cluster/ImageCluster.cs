@@ -84,7 +84,7 @@ public class ImageCluster : ContentView
     public ImageCluster()
     {
         // Rectangle
-        var rectangle = new Rectangle
+        rectangle = new Rectangle
         {
             HeightRequest = 60,
             WidthRequest = 80,
@@ -96,7 +96,7 @@ public class ImageCluster : ContentView
         };
 
         // Triangle
-        var triangle = new Polygon
+        triangle = new Polygon
         {
             VerticalOptions = LayoutOptions.Start,
             HorizontalOptions = LayoutOptions.Start,
@@ -107,7 +107,7 @@ public class ImageCluster : ContentView
         };
 
         // Image
-        var image = new Image
+        image = new Image
         {
 
             VerticalOptions = LayoutOptions.Start,
@@ -119,7 +119,7 @@ public class ImageCluster : ContentView
             Aspect = Aspect.AspectFit
         };
 
-        var imgBg = new Rectangle
+        imgBg = new Rectangle
         {
             HeightRequest = 54,
             WidthRequest = 72,
@@ -131,7 +131,7 @@ public class ImageCluster : ContentView
             StrokeThickness = 0
         };
 
-        var cnt = new Label
+        cnt = new Label
         {
             //HeightRequest = 54,
             //WidthRequest = 72,
@@ -153,4 +153,9 @@ public class ImageCluster : ContentView
 
         };
     }
+    Rectangle rectangle;
+    Polygon triangle;
+    Rectangle imgBg;
+    Image image;
+    public Label cnt;
 }

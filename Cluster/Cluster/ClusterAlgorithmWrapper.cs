@@ -90,11 +90,13 @@ namespace Extern
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
         public static partial Benchmark InitAlgorithm(ImgArray imageList, uint screenWidth, uint screenHeight, IntPtr algoClass);
 
-        [DllImport(LibraryName0, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Benchmark IterateAlgorithm(IntPtr algoClass, Rectangle screenRegion);
+        [LibraryImport(LibraryName0)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial Benchmark IterateAlgorithm(IntPtr algoClass, Rectangle screenRegion);
 
-        [DllImport(LibraryName0, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void DeleteAlgorithm(IntPtr algoClass);
+        [LibraryImport(LibraryName0)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial void DeleteAlgorithm(IntPtr algoClass);
 
         public IntPtr _algorithmInstance;
 

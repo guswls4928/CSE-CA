@@ -11,7 +11,7 @@ extern "C" {
 
 #pragma pack(push, 1)
         struct ImageNode {
-            const char* fileName;
+            char* fileName;
             Point pos;
         };
 #pragma pack(pop)
@@ -69,18 +69,26 @@ extern "C" {
 
         ImgCluster::Images convertVector(struct ImgArray images) {
             ImgCluster::Images result;
-            for (size_t i = 0; i < images.count; i++)
-                result.push_back({ images.head[i].fileName,
-                                  {images.head[i].pos.x, images.head[i].pos.y} });
+            for (size_t i = 0; i < images.count; i++) {
+                ImgCluster::ImageNode tmp;
+                tmp.fileName = images.head[i].fileName;
+                tmp.pos.x = images.head[i].pos.x;
+                tmp.pos.y = images.head[i].pos.y;
+                result.push_back(tmp);
+            }
             return result;
         }
 
         struct Benchmark convertBenchmark(ImgCluster::Benchmark b) {
             Wrapper::ImageCluster* alloc = new ImageCluster[b.clusters.size()];
             for (int i = 0; i < b.clusters.size(); i++) {
-                alloc[i] = { {b.clusters[i].repr.fileName.c_str(), {b.clusters[i].repr.pos.x, b.clusters[i].repr.pos.y}},
-                            {b.clusters[i].pos.x, b.clusters[i].pos.y},
-                            b.clusters[i].count };
+                alloc[i].count = b.clusters[i].count;
+                alloc[i].pos.x = b.clusters[i].pos.x;
+                alloc[i].pos.y = b.clusters[i].pos.y;
+                alloc[i].repr.fileName = strdup(b.clusters[i].repr.fileName.c_str());
+                alloc[i].repr.pos.x = b.clusters[i].repr.pos.x;
+                alloc[i].repr.pos.y = b.clusters[i].repr.pos.y;
+
             }
             ClusterArray arr;
             arr.count = b.clusters.size();
@@ -105,6 +113,7 @@ extern "C" {
             t.a = p1;
             t.c = p2;
             t.b = 7;
+
             return t;
         }
 

@@ -1104,6 +1104,8 @@ C:\Users\lecti\Documents\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\stamp\_
 C:\Users\lecti\Documents\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\lecti\Documents\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\lecti\Documents\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Android.Glide.dll
+C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Google.Android.Material.dll
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\bin\Debug\net8.0-android\Platforms\Android\native-libs\arm64-v8a\libDefaultAlgorithm.so
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\bin\Debug\net8.0-android\Platforms\Android\native-libs\arm64-v8a\libDefaultAlgorithm.so.recipe
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\bin\Debug\net8.0-android\Cluster.runtimeconfig.json
@@ -1478,7 +1480,6 @@ C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\WindowsBase.dll
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Android.Glide.Annotations.dll
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Android.Glide.DiskLruCache.dll
-C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Android.Glide.dll
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Android.Glide.GifDecoder.dll
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Activity.dll
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Activity.Ktx.dll
@@ -1613,7 +1614,6 @@ C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Window.Extensions.Core.Core.dll
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Window.Extensions.Core.Core.pdb
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Window.pdb
-C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Google.Android.Material.dll
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Google.Android.Material.pdb
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Google.Crypto.Tink.Android.dll
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\android\assets\Xamarin.Google.ErrorProne.Annotations.dll

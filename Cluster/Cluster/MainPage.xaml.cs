@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.Controls.Maps;
 using Microsoft.Maui.Maps;
+using System.Diagnostics.Metrics;
 using System.Timers;
 using Timer = System.Timers.Timer;
 namespace Cluster
@@ -23,17 +24,30 @@ namespace Cluster
             SetupPollingTimer();
 
             
+
+            DisplayMap.MoveToRegion(new MapSpan(new Location(37.541, 126.986), 35, 42));
+        }
+
+        private void AddPins(Algorithm.Benchmark benchmark)
+        {
+            foreach(Algorithm.ImageCluster item in benchmark.Clusters)
+            {
+                ImageCluster cluster = new ImageCluster();
+                cluster.MapCoords = new MapPos(item.Position.X, item.Position.Y);
+                cluster.ImageSource = item.Representative.FileName;
+                cluster.cnt.Text = $"{item.Count}";
+
+                OverlayCanvas.Children.Add(cluster);
+            }
+
             foreach (var item in OverlayCanvas.Children)
             {
                 if (item is ImageCluster cluster)
                 {
-                    cluster.MapCoords = new MapPos(126.986, 37.541);
-                    //var t = ScreenPos.fromMapPos(cluster.MapCoords, DisplayMap.VisibleRegion,
-                    //    DisplayMap.Width, DisplayMap.Height);
-                    //cluster.Position = t;
+                    cluster.Position = ScreenPos.fromMapPos(cluster.MapCoords, DisplayMap.VisibleRegion,
+                        DisplayMap.Width, DisplayMap.Height);
                 }
             }
-            DisplayMap.MoveToRegion(new MapSpan(new Location(37.541, 126.986), 35, 42));
         }
 
         private void SetupPollingTimer()
@@ -142,18 +156,18 @@ namespace Cluster
         private void Button_Pressed(object sender, EventArgs e)
         {
             var l = new List<Algorithm.ImageNode>();
-            var p = new Algorithm.Point(); p.X = 37.541; p.Y = 126.986;
+            var p = new Algorithm.Point(); p.Y = 37.541; p.X = 126.986;
             var img = new Algorithm.ImageNode();
             img.FileName = "dotnet_bot.png";
             img.Position = p;
 
-            var p2 = new Algorithm.Point(); p.X = 40; p.Y = 130;
+            var p2 = new Algorithm.Point(); p2.Y = 40; p2.X = 130;
             var img2 = new Algorithm.ImageNode();
-            img.FileName = "dotnet_bot2.png";
-            img.Position = p2;
+            img2.FileName = "dotnet_bot.png";
+            img2.Position = p2;
 
             l.Add(img);
-            //l.Add(img2);
+            l.Add(img2);
 
             var a = new Algorithm.AlgorithmInterface();
 
@@ -161,16 +175,7 @@ namespace Cluster
 
             var c = a.Iterate(DisplayMap.VisibleRegion);
 
-            var pin = new Pin
-            {
-                Label = "Some Label",
-                Address = "Some Address",
-                Type = PinType.Place,
-                
-                Location = new Location(37.541, 126.986) // Latitude, Longitude
-            };
-
-            DisplayMap.Pins.Add(pin);
+            AddPins(c);
         }
     }
 
