@@ -43,7 +43,7 @@ namespace ImgCluster {
             x = p1.x > p2.x ? p1.x : p2.x;
             y = p1.y > p2.y ? p1.y : p2.y;
         }
-        Point getPoint(double iftop0, double ifleft0) {
+        Point getPoint(double iftop0, double ifleft0) const {
             return Point(iftop0 ? x + w : x, ifleft0 ? y + h : y);
         }
         double x, y;
