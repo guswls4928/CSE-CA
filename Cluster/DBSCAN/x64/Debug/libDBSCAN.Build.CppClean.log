@@ -1,0 +1,14 @@
+..\cluster\platforms\android\native-libs\arm64-v8a\libdbscan.so.recipe
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\pch.h.gch
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\algowrapper.o
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\clusterinterface.o
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.o
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.tlog\clang-ld.read.1.tlog
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.tlog\clang-ld.write.1.tlog
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.tlog\clang.command.1.tlog
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.tlog\clang.read.1.tlog
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.tlog\dbscan.write.1u.tlog
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.tlog\microsoft.build.cpptasks.clangcompile.read.1.tlog
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.tlog\microsoft.build.cpptasks.clangcompile.write.1.tlog
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.tlog\microsoft.build.cpptasks.clanglink.read.1.tlog
+c:\users\lecti\documents\cse-ca\cluster\dbscan\x64\debug\dbscan.tlog\microsoft.build.cpptasks.clanglink.write.1.tlog
