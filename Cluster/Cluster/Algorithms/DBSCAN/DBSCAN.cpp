@@ -4,9 +4,10 @@ class DBSCAN : ImgCluster::ClusterAlgorithm {
     // TODO: need to set eps value
 public:
     DBSCAN(ImgCluster::Images& images, ImgCluster::Rectangle& rect, int minPts, double eps);
-    auto dbscan(ImgCluster::Rectangle& rect, double eps, int minPts = 1);
-    void radiusSearch(const Images& data, size_t idx, float eps, std::vector<std::pair<size_t, float>>& matches);
-    
+    ImageClusters dbscan(ImgCluster::Rectangle& rect, double eps, int minPts = 1);
+    void radiusSearch(const Images& data, int idx, double eps, std::vector<std::pair<int, double>>& matches);
+    void idxToPos(std::vector<std::vector<int>> idx, ImgCluster::ImageClusters clusters);
+
     virtual void findTargetImgList(const Rectangle& screenRegion);
 
     virtual Benchmark init(const Images& imageList, unsigned int screenWidth, unsigned int screenHeight);
@@ -16,6 +17,21 @@ private:
     ImgCluster::Images targetImgList;
     unsigned int screenWidth, screenHeight;
 };
+
+void DBSCAN::idxToPos(std::vector<std::vector<int>> idx, ImgCluster::ImageClusters clusters) {
+    for(auto i : idx) { // i: vector<int> representing image index in cluster
+        ImgCluster::ImageCluster imgCluster;
+        for(int j : i) { // j: image index in cluster
+            imgCluster.count++;
+            imgCluster.pos.x += imageList[j].pos.x;
+            imgCluster.pos.y += imageList[j].pos.y;
+        }
+        imgCluster.pos.x /= imgCluster.count;
+        imgCluster.pos.y /= imgCluster.count;
+        imgCluster.repr = imageList[i[0]];
+        clusters.push_back(imgCluster);
+    }
+}
 
 // copy from Kmeans.cpp
 void DBSCAN::findTargetImgList(const Rectangle &screenRegion) {
@@ -61,7 +77,8 @@ Benchmark DBSCAN::init(const Images& imageList, unsigned int screenWidth, unsign
 
     findTargetImgList(Rectangle(0, 0, screenWidth, screenHeight));    
     Rectangle rect = Rectangle(0, 0, screenWidth, screenHeight);
-    dbscan(rect, 1, 1);
+    ImageClusters cl = dbscan(rect, 1, 1);
+    benchmark.clusters = cl;
 
     end = std::chrono::high_resolution_clock::now();
     benchmark.elapsed = static_cast<time_t>((end - start).count());
@@ -83,7 +100,8 @@ Benchmark DBSCAN::iterate(const Rectangle& screenRegion) {
 
     findTargetImgList(screenRegion);
     Rectangle rect = screenRegion;
-    dbscan(rect, 1, 1);
+    ImageClusters cl = dbscan(rect, 1, 1);
+    benchmark.clusters = cl;
 
     end = std::chrono::high_resolution_clock::now();
     benchmark.elapsed = static_cast<time_t>((end - start).count());
@@ -91,22 +109,22 @@ Benchmark DBSCAN::iterate(const Rectangle& screenRegion) {
     return benchmark;
 };
 
-auto DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps, int minPts = 1) {
-    Images& data = targetImgList;                               // target image list
-    auto visited  = std::vector<bool>(data.size());             // visited
-    auto clusters = std::vector<std::vector<size_t>>();         // clusters
-    auto matches  = std::vector<std::pair<size_t, float>>();    // images in radius of eps
-    auto sub_matches = std::vector<std::pair<size_t, float>>(); // images in radius of eps
+ImageClusters DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps, int minPts = 1) {
+    Images& data = targetImgList;                                // target image list
+    auto visited  = std::vector<bool>(data.size());              // visited
+    std::vector<std::vector<int>> clusters;                      // clusters
+    std::vector<std::pair<int, double>> matches;                 // images in radius of eps
+    std::vector<std::pair<int, double>> sub_matches;             // images in radius of eps
 
-    for(size_t i = 0; i < data.size(); i++) {
+    for(int i = 0; i < data.size(); i++) {
         if(visited[i]) continue;
         radiusSearch(data, i, eps, matches);
         if(matches.size() < minPts) continue;
 
-        auto cluster = std::vector<size_t>(); 
+        std::vector<int> cluster; 
 
         while(matches.empty() == false) {
-            auto idx = matches.back().first;
+            int idx = matches.back().first;
             matches.pop_back();
             if(visited[idx]) continue;
             visited[idx] = true;
@@ -121,19 +139,22 @@ auto DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps, int minPts = 1) {
         }
         clusters.push_back(cluster);
     }
-    return clusters;
+    ImageClusters imgClusters;
+    idxToPos(clusters, imgClusters);
+
+    return imgClusters;
 }
 
 // TODO: need to implement radiusSearch using kd-tree
-void radiusSearch(const Images& imgData, size_t idx, float eps, std::vector<std::pair<size_t, float>>& matches) {
+void radiusSearch(const Images& imgData, int idx, double eps, std::vector<std::pair<int, double>>& matches) {
     std::vector<std::pair<double, double>> data;
     for (auto iter : imgData) {
         data.push_back(std::make_pair(iter.pos.x, iter.pos.y));
     }
     matches.clear();
-    for(size_t i = 0; i < data.size(); i++) {
+    for(int i = 0; i < data.size(); i++) {
         if(i == idx) continue;
-        auto dist = std::sqrt(std::pow(data[i].first - data[idx].first, 2) + std::pow(data[i].second - data[idx].second, 2));
+        double dist = std::sqrt(std::pow(data[i].first - data[idx].first, 2) + std::pow(data[i].second - data[idx].second, 2));
         if(dist < eps) {
             matches.push_back(std::make_pair(i, dist));
         }
