@@ -1,6 +1,7 @@
 {
   "version": 2,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "dgSpecHash": "O9svS1CvM7XQoaN8D9AOQsbtfFM/ISGsZVb4yHwCqZfanLEwDO6rZwrCFNnVvyHQTdvxp9tA5PrZxXkZrQEw/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
@@ -123,6 +124,8 @@
   ],
   "logs": []
 =======
+=======
+>>>>>>> Stashed changes
   "dgSpecHash": "PNU9bZ9GS8EmvyQk4D3lFuw6zA7NeSQcv9UGK7sCWiJevXyw6/oGTDzzpVC1tm+uPi0gbkhGYTsy1ynaKwQ20w==",
   "success": false,
   "projectFilePath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
@@ -134,5 +137,8 @@
       "message": "하나 이상의 대상 프레임워크(net8.0-android, net8.0-ios, net8.0-maccatalyst)에서 플랫폼을 지정했지만 플랫폼 버전이 없습니다."
     }
   ]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

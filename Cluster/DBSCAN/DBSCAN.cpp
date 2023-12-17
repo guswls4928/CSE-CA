@@ -1,9 +1,13 @@
 #include "clusterInterface.h"
 #include <chrono>
 #include <cmath>
+<<<<<<<< Updated upstream:Cluster/DBSCAN/DBSCAN.cpp
 using ImgCluster::Rectangle;
 
 class DBSCAN {
+========
+class DBSCAN : ImgCluster::ClusterAlgorithm {
+>>>>>>>> Stashed changes:Cluster/DefaultAlgorithm/DBSCAN.cpp
     // TODO: need to set eps value
 public:
     //DBSCAN(ImgCluster::Images& images, ImgCluster::Rectangle& rect, int minPts, double eps);
@@ -40,6 +44,7 @@ void DBSCAN::idxToPos(std::vector<std::vector<int>> idx, ImgCluster::ImageCluste
 void DBSCAN::findTargetImgList(const Rectangle& screenRegion) {
     targetImgList.clear();
 
+<<<<<<<< Updated upstream:Cluster/DBSCAN/DBSCAN.cpp
     // 좌상단
     Point leftTopPoint = screenRegion.getPoint(0, 0);
     // 우상단
@@ -48,6 +53,22 @@ void DBSCAN::findTargetImgList(const Rectangle& screenRegion) {
     Point leftBotPoint = screenRegion.getPoint(1, 0);
     // 우하단
     Point rightBotPoint = screenRegion.getPoint(1, 1);
+========
+    /*
+        Point getPoint(double iftop0, double ifleft0) {
+            return Point(iftop0 ? x + w : x, ifleft0 ? y + h : y);
+        }
+    */
+
+    // 좌상단
+    Point leftTopPoint(screenRegion.x, screenRegion.y);
+    // 우상단
+    Point rightTopPoint(screenRegion.x, screenRegion.y + screenRegion.h);
+    // 좌하단
+    Point leftBotPoint(screenRegion.x + screenRegion.w, screenRegion.y);
+    // 우하단
+    Point rightBotPoint(screenRegion.x + screenRegion.w, screenRegion.y + screenRegion.h);
+>>>>>>>> Stashed changes:Cluster/DefaultAlgorithm/DBSCAN.cpp
 
     bool flag = false;
     for (auto iter : imageList) {
@@ -78,8 +99,12 @@ Benchmark DBSCAN::init(const Images& imageList, unsigned int screenWidth, unsign
     benchmark.deviation = 0;
     benchmark.clusters.clear();
 
+<<<<<<<< Updated upstream:Cluster/DBSCAN/DBSCAN.cpp
     findTargetImgList(Rectangle(0, 0, screenWidth, screenHeight));
+========
+>>>>>>>> Stashed changes:Cluster/DefaultAlgorithm/DBSCAN.cpp
     Rectangle rect = Rectangle(0, 0, screenWidth, screenHeight);
+    findTargetImgList(rect);
     ImageClusters cl = dbscan(rect, 1, 1);
     benchmark.clusters = cl;
 
@@ -112,7 +137,7 @@ Benchmark DBSCAN::iterate(const Rectangle& screenRegion) {
     return benchmark;
 };
 
-ImageClusters DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps, int minPts = 1) {
+ImageClusters DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps, int minPts) {
     Images& data = targetImgList;                                // target image list
     auto visited = std::vector<bool>(data.size());              // visited
     std::vector<std::vector<int>> clusters;                      // clusters
