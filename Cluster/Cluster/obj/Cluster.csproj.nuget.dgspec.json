@@ -1,43 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-        "projectName": "Cluster",
-        "projectPath": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-        "packagesPath": "C:\\Users\\lecti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\obj\\",
-=======
-    "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-        "projectName": "Cluster",
-        "projectPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-        "packagesPath": "C:\\Users\\Yusi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\obj\\",
->>>>>>> Stashed changes
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "configFilePaths": [
-<<<<<<< Updated upstream
-          "C:\\Users\\lecti\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\Yusi\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Stashed changes
-=======
     "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {}
   },
   "projects": {
@@ -53,24 +16,6 @@
         "crossTargeting": true,
         "configFilePaths": [
           "C:\\Users\\Yusi\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Stashed changes
-=======
-    "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-        "projectName": "Cluster",
-        "projectPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-        "packagesPath": "C:\\Users\\Yusi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\obj\\",
-        "projectStyle": "PackageReference",
-        "crossTargeting": true,
-        "configFilePaths": [
-          "C:\\Users\\Yusi\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Stashed changes
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

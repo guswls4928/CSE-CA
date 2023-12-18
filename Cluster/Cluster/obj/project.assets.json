@@ -36,49 +36,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    "C:\\Users\\lecti\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
     "C:\\Users\\Yusi\\.nuget\\packages\\": {}
->>>>>>> Stashed changes
-=======
-    "C:\\Users\\Yusi\\.nuget\\packages\\": {}
->>>>>>> Stashed changes
-=======
-    "C:\\Users\\Yusi\\.nuget\\packages\\": {}
->>>>>>> Stashed changes
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "projectUniqueName": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-      "projectName": "Cluster",
-      "projectPath": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-      "packagesPath": "C:\\Users\\lecti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lecti\\Documents\\CSE-CA\\Cluster\\Cluster\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-      "projectName": "Cluster",
-      "projectPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-      "packagesPath": "C:\\Users\\Yusi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\obj\\",
->>>>>>> Stashed changes
-      "projectStyle": "PackageReference",
-      "crossTargeting": true,
-      "configFilePaths": [
-<<<<<<< Updated upstream
-        "C:\\Users\\lecti\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-        "C:\\Users\\Yusi\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Stashed changes
-=======
       "projectUniqueName": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
       "projectName": "Cluster",
       "projectPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
@@ -88,18 +50,6 @@
       "crossTargeting": true,
       "configFilePaths": [
         "C:\\Users\\Yusi\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Stashed changes
-=======
-      "projectUniqueName": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-      "projectName": "Cluster",
-      "projectPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-      "packagesPath": "C:\\Users\\Yusi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\obj\\",
-      "projectStyle": "PackageReference",
-      "crossTargeting": true,
-      "configFilePaths": [
-        "C:\\Users\\Yusi\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Stashed changes
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -295,6 +245,12 @@
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "캐시 파일 C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\obj\\project.nuget.cache을(를) 읽는 동안 문제가 발생했습니다. Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1012",
       "level": "Error",
