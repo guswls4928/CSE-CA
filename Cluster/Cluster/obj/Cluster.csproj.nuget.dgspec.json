@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {}
+    "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {
+    "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
+        "projectUniqueName": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
         "projectName": "Cluster",
-        "projectPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
-        "packagesPath": "C:\\Users\\mh7cp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mh7cp\\Desktop\\projects_inprogress\\Algo\\CSE-CA\\Cluster\\Cluster\\obj\\",
+        "projectPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\Cluster.csproj",
+        "packagesPath": "C:\\Users\\Yusi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yusi\\Documents\\GitHub\\CSE-CA\\Cluster\\Cluster\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mh7cp\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Yusi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,19 +26,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0-android34.0": {
+          "net8.0-android": {
             "targetAlias": "net8.0-android",
             "projectReferences": {}
           },
-          "net8.0-ios17.0": {
+          "net8.0-ios": {
             "targetAlias": "net8.0-ios",
             "projectReferences": {}
           },
-          "net8.0-maccatalyst17.0": {
+          "net8.0-maccatalyst": {
             "targetAlias": "net8.0-maccatalyst",
             "projectReferences": {}
           },
@@ -58,7 +53,7 @@
         }
       },
       "frameworks": {
-        "net8.0-android34.0": {
+        "net8.0-android": {
           "targetAlias": "net8.0-android",
           "dependencies": {
             "Microsoft.Extensions.Logging.Debug": {
@@ -67,11 +62,11 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "(, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "(, )"
             },
             "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
@@ -80,12 +75,6 @@
             "Microsoft.Maui.Maps": {
               "target": "Package",
               "version": "[8.0.3, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.0, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -100,45 +89,14 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.Android": {
-              "privateAssets": "all"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         },
-        "net8.0-ios17.0": {
+        "net8.0-ios": {
           "targetAlias": "net8.0-ios",
-          "dependencies": {
-            "Microsoft.Extensions.Logging.Debug": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.Maui.Controls": {
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.Maui.Controls.Compatibility": {
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.Maui.Controls.Maps": {
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.Maui.Maps": {
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.0, )",
-              "autoReferenced": true
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -150,17 +108,9 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.iOS": {
-              "privateAssets": "all"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         },
-        "net8.0-maccatalyst17.0": {
+        "net8.0-maccatalyst": {
           "targetAlias": "net8.0-maccatalyst",
           "dependencies": {
             "Microsoft.Extensions.Logging.Debug": {
@@ -169,11 +119,11 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "(, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "(, )"
             },
             "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
@@ -182,16 +132,9 @@
             "Microsoft.Maui.Maps": {
               "target": "Package",
               "version": "[8.0.3, )"
-            },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.0, )",
-              "autoReferenced": true
             }
           },
           "imports": [
-            "xamarinios10",
             "net461",
             "net462",
             "net47",
@@ -203,9 +146,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.MacCatalyst": {
-              "privateAssets": "all"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -221,11 +161,11 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "(, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "(, )"
             },
             "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
@@ -261,29 +201,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
-        "android-arm": {
-          "#import": []
-        },
-        "android-arm64": {
-          "#import": []
-        },
-        "android-x64": {
-          "#import": []
-        },
-        "android-x86": {
-          "#import": []
-        },
         "iossimulator-x64": {
-          "#import": []
-        },
-        "maccatalyst-x64": {
-          "#import": []
-        },
-        "win10-x64": {
           "#import": []
         }
       }

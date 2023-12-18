@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClCompile Include="algoWrapper.cpp" />
     <ClCompile Include="clusterInterface.cpp" />
+    <ClCompile Include="DBSCAN.cpp" />
     <ClCompile Include="SampleImplementation.h" />
   </ItemGroup>
   <ItemGroup>
