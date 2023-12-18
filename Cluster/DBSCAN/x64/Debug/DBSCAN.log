@@ -6,54 +6,109 @@
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
   algoWrapper.cpp
   In file included from algoWrapper.cpp:1:
-  In file included from ./DBSCAN.cpp:1:
-./clusterInterface.cpp(4,14): error : redefinition of 'operator-'
-  Point Point::operator-(Vector& mov) { return Point(x - mov.x, y - mov.y); }
-               ^
-  ./clusterInterface.h(119,14): note: previous definition is here
-  Point Point::operator-(Vector& mov) { return Point(x - mov.x, y - mov.y); }
-               ^
-  In file included from algoWrapper.cpp:1:
-  In file included from ./DBSCAN.cpp:1:
-./clusterInterface.cpp(5,14): error : redefinition of 'operator+'
-  Point Point::operator+(Vector& mov) { return Point(x + mov.x, y + mov.y); }
-               ^
-  ./clusterInterface.h(120,14): note: previous definition is here
-  Point Point::operator+(Vector& mov) { return Point(x + mov.x, y + mov.y); }
-               ^
-  In file included from algoWrapper.cpp:1:
-  In file included from ./DBSCAN.cpp:1:
-./clusterInterface.cpp(6,15): error : redefinition of 'operator-'
-  Vector Point::operator-(Point& sub) { return Vector(x - sub.x, y - sub.y); }
-                ^
-  ./clusterInterface.h(121,15): note: previous definition is here
-  Vector Point::operator-(Point& sub) { return Vector(x - sub.x, y - sub.y); }
-                ^
-  In file included from algoWrapper.cpp:1:
-  In file included from ./DBSCAN.cpp:1:
-./clusterInterface.cpp(7,15): error : redefinition of 'toVector'
-  Vector Point::toVector() { return Vector(x, y); }
-                ^
-  ./clusterInterface.h(122,15): note: previous definition is here
-  Vector Point::toVector() { return Vector(x, y); }
-                ^
+./DBSCAN.cpp(62,9): warning : unused variable 'laxis' [-Wunused-variable]
+      int laxis = screenRegion.x > screenRegion.y ? screenRegion.x : screenRegion.y;
+          ^
 algoWrapper.cpp(66,31): warning : 'convertRect' has C-linkage specified, but returns user-defined type 'ImgCluster::Rectangle' which is incompatible with C [-Wreturn-type-c-linkage]
           ImgCluster::Rectangle convertRect(struct Rectangle rect) {
                                 ^
 algoWrapper.cpp(70,28): warning : 'convertVector' has C-linkage specified, but returns user-defined type 'ImgCluster::Images' (aka 'vector<ImgCluster::ImageNode>') which is incompatible with C [-Wreturn-type-c-linkage]
           ImgCluster::Images convertVector(struct ImgArray images) {
                              ^
-algoWrapper.cpp(107,24): error : no matching constructor for initialization of 'DBSCAN'
-              return new DBSCAN();
-                         ^
-  ./DBSCAN.cpp(4,7): note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
-  class DBSCAN : ImgCluster::ClusterAlgorithm {
-        ^
-  ./DBSCAN.cpp(4,7): note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
-  ./DBSCAN.cpp(7,5): note: candidate constructor not viable: requires 4 arguments, but 0 were provided
-      DBSCAN(ImgCluster::Images& images, ImgCluster::Rectangle& rect, int minPts, double eps);
-      ^
 algoWrapper.cpp(129,13): warning : delete called on non-final 'DBSCAN' that has virtual functions but non-virtual destructor [-Wdelete-non-abstract-non-virtual-dtor]
               delete ((DBSCAN*)algoClass);
               ^
-  3 warnings and 5 errors generated.
+  4 warnings generated.
+  clusterInterface.cpp
+  DBSCAN.cpp
+DBSCAN.cpp(62,9): warning : unused variable 'laxis' [-Wunused-variable]
+      int laxis = screenRegion.x > screenRegion.y ? screenRegion.x : screenRegion.y;
+          ^
+  1 warning generated.
+  ld: error: duplicate symbol: ImgCluster::Point::toVector()
+  >>> defined at clusterInterface.h:122 (.\clusterInterface.h:122)
+  >>>            x64\Debug\algoWrapper.o:(ImgCluster::Point::toVector())
+  >>> defined at clusterInterface.h:122 (.\clusterInterface.h:122)
+  >>>            x64\Debug\clusterInterface.o:(.text+0xF0)
+  ld: error: duplicate symbol: ImgCluster::Point::operator-(ImgCluster::Vector&)
+  >>> defined at clusterInterface.h:119 (.\clusterInterface.h:119)
+  >>>            x64\Debug\algoWrapper.o:(ImgCluster::Point::operator-(ImgCluster::Vector&))
+  >>> defined at clusterInterface.h:119 (.\clusterInterface.h:119)
+  >>>            x64\Debug\clusterInterface.o:(.text+0x0)
+  ld: error: duplicate symbol: ImgCluster::Point::operator-(ImgCluster::Point&)
+  >>> defined at clusterInterface.h:121 (.\clusterInterface.h:121)
+  >>>            x64\Debug\algoWrapper.o:(ImgCluster::Point::operator-(ImgCluster::Point&))
+  >>> defined at clusterInterface.h:121 (.\clusterInterface.h:121)
+  >>>            x64\Debug\clusterInterface.o:(.text+0xA0)
+  ld: error: duplicate symbol: ImgCluster::Point::operator+(ImgCluster::Vector&)
+  >>> defined at clusterInterface.h:120 (.\clusterInterface.h:120)
+  >>>            x64\Debug\algoWrapper.o:(ImgCluster::Point::operator+(ImgCluster::Vector&))
+  >>> defined at clusterInterface.h:120 (.\clusterInterface.h:120)
+  >>>            x64\Debug\clusterInterface.o:(.text+0x50)
+  ld: error: duplicate symbol: radiusSearch(std::__ndk1::vector<ImgCluster::ImageNode, std::__ndk1::allocator<ImgCluster::ImageNode> > const&, int, double, std::__ndk1::vector<std::__ndk1::pair<int, double>, std::__ndk1::allocator<std::__ndk1::pair<int, double> > >&, int&)
+  >>> defined at DBSCAN.cpp:178 (.\DBSCAN.cpp:178)
+  >>>            x64\Debug\algoWrapper.o:(radiusSearch(std::__ndk1::vector<ImgCluster::ImageNode, std::__ndk1::allocator<ImgCluster::ImageNode> > const&, int, double, std::__ndk1::vector<std::__ndk1::pair<int, double>, std::__ndk1::allocator<std::__ndk1::pair<int, double> > >&, int&))
+  >>> defined at DBSCAN.cpp:178
+  >>>            x64\Debug\DBSCAN.o:(.text+0xD40)
+  ld: error: duplicate symbol: ImgCluster::Point::toVector()
+  >>> defined at clusterInterface.h:122 (.\clusterInterface.h:122)
+  >>>            x64\Debug\algoWrapper.o:(ImgCluster::Point::toVector())
+  >>> defined at clusterInterface.h:122 (.\clusterInterface.h:122)
+  >>>            x64\Debug\DBSCAN.o:(.text+0xF0)
+  ld: error: duplicate symbol: ImgCluster::Point::operator-(ImgCluster::Vector&)
+  >>> defined at clusterInterface.h:119 (.\clusterInterface.h:119)
+  >>>            x64\Debug\algoWrapper.o:(ImgCluster::Point::operator-(ImgCluster::Vector&))
+  >>> defined at clusterInterface.h:119 (.\clusterInterface.h:119)
+  >>>            x64\Debug\DBSCAN.o:(.text+0x0)
+  ld: error: duplicate symbol: ImgCluster::Point::operator-(ImgCluster::Point&)
+  >>> defined at clusterInterface.h:121 (.\clusterInterface.h:121)
+  >>>            x64\Debug\algoWrapper.o:(ImgCluster::Point::operator-(ImgCluster::Point&))
+  >>> defined at clusterInterface.h:121 (.\clusterInterface.h:121)
+  >>>            x64\Debug\DBSCAN.o:(.text+0xA0)
+  ld: error: duplicate symbol: ImgCluster::Point::operator+(ImgCluster::Vector&)
+  >>> defined at clusterInterface.h:120 (.\clusterInterface.h:120)
+  >>>            x64\Debug\algoWrapper.o:(ImgCluster::Point::operator+(ImgCluster::Vector&))
+  >>> defined at clusterInterface.h:120 (.\clusterInterface.h:120)
+  >>>            x64\Debug\DBSCAN.o:(.text+0x50)
+  ld: error: duplicate symbol: DBSCAN::findTargetImgList(ImgCluster::Rectangle const&)
+  >>> defined at DBSCAN.cpp:44 (.\DBSCAN.cpp:44)
+  >>>            x64\Debug\algoWrapper.o:(DBSCAN::findTargetImgList(ImgCluster::Rectangle const&))
+  >>> defined at DBSCAN.cpp:44
+  >>>            x64\Debug\DBSCAN.o:(.text+0x3B0)
+  ld: error: duplicate symbol: DBSCAN::init(std::__ndk1::vector<ImgCluster::ImageNode, std::__ndk1::allocator<ImgCluster::ImageNode> > const&, unsigned int, unsigned int)
+  >>> defined at DBSCAN.cpp:84 (.\DBSCAN.cpp:84)
+  >>>            x64\Debug\algoWrapper.o:(DBSCAN::init(std::__ndk1::vector<ImgCluster::ImageNode, std::__ndk1::allocator<ImgCluster::ImageNode> > const&, unsigned int, unsigned int))
+  >>> defined at DBSCAN.cpp:84
+  >>>            x64\Debug\DBSCAN.o:(.text+0x640)
+  ld: error: duplicate symbol: DBSCAN::dbscan(ImgCluster::Rectangle&, double, int, int&)
+  >>> defined at DBSCAN.cpp:141 (.\DBSCAN.cpp:141)
+  >>>            x64\Debug\algoWrapper.o:(DBSCAN::dbscan(ImgCluster::Rectangle&, double, int, int&))
+  >>> defined at DBSCAN.cpp:141
+  >>>            x64\Debug\DBSCAN.o:(.text+0x7F0)
+  ld: error: duplicate symbol: DBSCAN::iterate(ImgCluster::Rectangle const&)
+  >>> defined at DBSCAN.cpp:112 (.\DBSCAN.cpp:112)
+  >>>            x64\Debug\algoWrapper.o:(DBSCAN::iterate(ImgCluster::Rectangle const&))
+  >>> defined at DBSCAN.cpp:112
+  >>>            x64\Debug\DBSCAN.o:(.text+0xBA0)
+  ld: error: duplicate symbol: DBSCAN::idxToPos(std::__ndk1::vector<std::__ndk1::vector<int, std::__ndk1::allocator<int> >, std::__ndk1::allocator<std::__ndk1::vector<int, std::__ndk1::allocator<int> > > >, std::__ndk1::vector<ImgCluster::ImageCluster, std::__ndk1::allocator<ImgCluster::ImageCluster> >)
+  >>> defined at DBSCAN.cpp:28 (.\DBSCAN.cpp:28)
+  >>>            x64\Debug\algoWrapper.o:(DBSCAN::idxToPos(std::__ndk1::vector<std::__ndk1::vector<int, std::__ndk1::allocator<int> >, std::__ndk1::allocator<std::__ndk1::vector<int, std::__ndk1::allocator<int> > > >, std::__ndk1::vector<ImgCluster::ImageCluster, std::__ndk1::allocator<ImgCluster::ImageCluster> >))
+  >>> defined at DBSCAN.cpp:28
+  >>>            x64\Debug\DBSCAN.o:(.text+0x1D0)
+  ld: error: duplicate symbol: DBSCAN::DBSCAN(std::__ndk1::vector<ImgCluster::ImageNode, std::__ndk1::allocator<ImgCluster::ImageNode> >&, ImgCluster::Rectangle&, int, double)
+  >>> defined at DBSCAN.cpp:22 (.\DBSCAN.cpp:22)
+  >>>            x64\Debug\algoWrapper.o:(DBSCAN::DBSCAN(std::__ndk1::vector<ImgCluster::ImageNode, std::__ndk1::allocator<ImgCluster::ImageNode> >&, ImgCluster::Rectangle&, int, double))
+  >>> defined at DBSCAN.cpp:22
+  >>>            x64\Debug\DBSCAN.o:(.text+0x130)
+  ld: error: duplicate symbol: DBSCAN::DBSCAN(std::__ndk1::vector<ImgCluster::ImageNode, std::__ndk1::allocator<ImgCluster::ImageNode> >&, ImgCluster::Rectangle&, int, double)
+  >>> defined at DBSCAN.cpp:22 (.\DBSCAN.cpp:22)
+  >>>            x64\Debug\algoWrapper.o:(DBSCAN::DBSCAN(std::__ndk1::vector<ImgCluster::ImageNode, std::__ndk1::allocator<ImgCluster::ImageNode> >&, ImgCluster::Rectangle&, int, double))
+  >>> defined at DBSCAN.cpp:22
+  >>>            x64\Debug\DBSCAN.o:(.text+0x130)
+  ld: error: duplicate symbol: vtable for DBSCAN
+  >>> defined at algoWrapper.cpp
+  >>>            x64\Debug\algoWrapper.o:(vtable for DBSCAN)
+  >>> defined at DBSCAN.cpp
+  >>>            x64\Debug\DBSCAN.o:(.data.rel.ro+0x0)
+  clang: error: linker command failed with exit code 1 (use -v to see invocation)
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Application Type\Android\3.0\Android.Common.targets(125,5): error MSB6006: "clang.exe"이(가) 종료되었습니다(코드: 1).

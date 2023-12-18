@@ -3,6 +3,7 @@
 #include <cmath>
 class DBSCAN : ImgCluster::ClusterAlgorithm {
 public:
+    DBSCAN() = default;
     DBSCAN(ImgCluster::Images& images, ImgCluster::Rectangle& rect, int minPts, double eps);
     ImageClusters dbscan(ImgCluster::Rectangle& rect, double eps, int minPts, int& compareCnt);
     void radiusSearch(const Images& data, int idx, double eps, std::vector<std::pair<int, double>>& matches, int& compareCnt);
@@ -17,6 +18,12 @@ private:
     ImgCluster::Images targetImgList;
     unsigned int screenWidth, screenHeight;
 };
+
+DBSCAN::DBSCAN(ImgCluster::Images& images, ImgCluster::Rectangle& rect, int minPts, double eps) {
+    screenWidth = rect.w;
+    screenHeight = rect.h;
+    init(images, screenWidth, screenHeight);
+}
 
 void DBSCAN::idxToPos(std::vector<std::vector<int>> idx, ImgCluster::ImageClusters clusters) {
     for (auto i : idx) { // i: vector<int> representing image index in cluster
