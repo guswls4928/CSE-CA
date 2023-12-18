@@ -5,6 +5,8 @@
 #include "clusterInterface.h"
 using namespace std;
 
+void appendJson(ImgCluster::Benchmark& benchmark);
+
 void printBenchMark(ImgCluster::Benchmark& benchmark){
     cout<<"[Results]"<<endl;
     cout<<"Comparisons:"<<benchmark.compareCnt<<endl;
@@ -17,6 +19,7 @@ void printBenchMark(ImgCluster::Benchmark& benchmark){
         cout<<"->Cnt "<<c.count<<endl;
         cout<<"->Representative "<<c.repr.fileName<<endl;
     }
+    appendJson(benchmark);
 }
 
 int main() {
