@@ -1,18 +1,12 @@
-#include "clusterInterface.h"
+#include "clusterInterface.cpp"
 #include <chrono>
 #include <cmath>
-<<<<<<<< Updated upstream:Cluster/DBSCAN/DBSCAN.cpp
-using ImgCluster::Rectangle;
-
-class DBSCAN {
-========
 class DBSCAN : ImgCluster::ClusterAlgorithm {
->>>>>>>> Stashed changes:Cluster/DefaultAlgorithm/DBSCAN.cpp
     // TODO: need to set eps value
 public:
-    //DBSCAN(ImgCluster::Images& images, ImgCluster::Rectangle& rect, int minPts, double eps);
-    ImageClusters dbscan(ImgCluster::Rectangle& rect, double eps, int minPts);
-    void radiusSearch(const Images& data, int idx, double eps, std::vector<std::pair<int, double>>& matches);
+    DBSCAN(ImgCluster::Images& images, ImgCluster::Rectangle& rect, int minPts, double eps);
+    ImageClusters dbscan(ImgCluster::Rectangle& rect, double eps, int minPts, int& compareCnt);
+    void radiusSearch(const Images& data, int idx, double eps, std::vector<std::pair<int, double>>& matches, int& compareCnt);
     void idxToPos(std::vector<std::vector<int>> idx, ImgCluster::ImageClusters clusters);
 
     virtual void findTargetImgList(const Rectangle& screenRegion);
@@ -44,16 +38,6 @@ void DBSCAN::idxToPos(std::vector<std::vector<int>> idx, ImgCluster::ImageCluste
 void DBSCAN::findTargetImgList(const Rectangle& screenRegion) {
     targetImgList.clear();
 
-<<<<<<<< Updated upstream:Cluster/DBSCAN/DBSCAN.cpp
-    // 좌상단
-    Point leftTopPoint = screenRegion.getPoint(0, 0);
-    // 우상단
-    Point rightTopPoint = screenRegion.getPoint(0, 1);
-    // 좌하단
-    Point leftBotPoint = screenRegion.getPoint(1, 0);
-    // 우하단
-    Point rightBotPoint = screenRegion.getPoint(1, 1);
-========
     /*
         Point getPoint(double iftop0, double ifleft0) {
             return Point(iftop0 ? x + w : x, ifleft0 ? y + h : y);
@@ -68,7 +52,6 @@ void DBSCAN::findTargetImgList(const Rectangle& screenRegion) {
     Point leftBotPoint(screenRegion.x + screenRegion.w, screenRegion.y);
     // 우하단
     Point rightBotPoint(screenRegion.x + screenRegion.w, screenRegion.y + screenRegion.h);
->>>>>>>> Stashed changes:Cluster/DefaultAlgorithm/DBSCAN.cpp
 
     bool flag = false;
     for (auto iter : imageList) {
@@ -99,18 +82,18 @@ Benchmark DBSCAN::init(const Images& imageList, unsigned int screenWidth, unsign
     benchmark.deviation = 0;
     benchmark.clusters.clear();
 
-<<<<<<<< Updated upstream:Cluster/DBSCAN/DBSCAN.cpp
-    findTargetImgList(Rectangle(0, 0, screenWidth, screenHeight));
-========
->>>>>>>> Stashed changes:Cluster/DefaultAlgorithm/DBSCAN.cpp
     Rectangle rect = Rectangle(0, 0, screenWidth, screenHeight);
     findTargetImgList(rect);
-    ImageClusters cl = dbscan(rect, 1, 1);
-    benchmark.clusters = cl;
+    int compareCnt = 0;
+    ImageClusters cl = dbscan(rect, 1, 1, compareCnt);
 
     end = std::chrono::high_resolution_clock::now();
+
     benchmark.elapsed = static_cast<time_t>((end - start).count());
-    // TODO: need to set compareCnt, maxNodes, deviation, clusters in benchmark
+    benchmark.clusters = cl;
+    benchmark.maxNodes = targetImgList.size();
+    benchmark.compareCnt = compareCnt;
+    // TODO: need to set compareCnt, deviation in benchmark
     return benchmark;
 };
 
@@ -128,25 +111,31 @@ Benchmark DBSCAN::iterate(const Rectangle& screenRegion) {
 
     findTargetImgList(screenRegion);
     Rectangle rect = screenRegion;
-    ImageClusters cl = dbscan(rect, 1, 1);
-    benchmark.clusters = cl;
+    int compareCnt = 0;
+    ImageClusters cl = dbscan(rect, 1, 1, compareCnt);
 
     end = std::chrono::high_resolution_clock::now();
+
+    
     benchmark.elapsed = static_cast<time_t>((end - start).count());
-    // TODO: need to set compareCnt, maxNodes, deviation, clusters in benchmark
+    benchmark.clusters = cl;
+    benchmark.compareCnt = compareCnt;
+    benchmark.maxNodes = targetImgList.size();
+
+    // TODO: need to set deviation in benchmark
     return benchmark;
 };
 
-ImageClusters DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps, int minPts) {
+ImageClusters DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps, int minPts, int& compareCnt) {
     Images& data = targetImgList;                                // target image list
-    auto visited = std::vector<bool>(data.size());              // visited
+    auto visited = std::vector<bool>(data.size());               // visited
     std::vector<std::vector<int>> clusters;                      // clusters
     std::vector<std::pair<int, double>> matches;                 // images in radius of eps
     std::vector<std::pair<int, double>> sub_matches;             // images in radius of eps
 
     for (int i = 0; i < data.size(); i++) {
         if (visited[i]) continue;
-        radiusSearch(data, i, eps, matches);
+        radiusSearch(data, i, eps, matches, compareCnt);
         if (matches.size() < minPts) continue;
 
         std::vector<int> cluster;
@@ -158,7 +147,7 @@ ImageClusters DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps, int minPts
             visited[idx] = true;
 
             cluster.push_back(idx);
-            radiusSearch(data, idx, eps, sub_matches);
+            radiusSearch(data, idx, eps, sub_matches, compareCnt);
             if (sub_matches.size() >= minPts) {
                 for (auto& match : sub_matches) {
                     matches.push_back(match);
@@ -174,7 +163,7 @@ ImageClusters DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps, int minPts
 }
 
 // TODO: need to implement radiusSearch using kd-tree
-void radiusSearch(const Images& imgData, int idx, double eps, std::vector<std::pair<int, double>>& matches) {
+void radiusSearch(const Images& imgData, int idx, double eps, std::vector<std::pair<int, double>>& matches, int& compareCnt) {
     std::vector<std::pair<double, double>> data;
     for (auto iter : imgData) {
         data.push_back(std::make_pair(iter.pos.x, iter.pos.y));
@@ -183,7 +172,7 @@ void radiusSearch(const Images& imgData, int idx, double eps, std::vector<std::p
     for (int i = 0; i < data.size(); i++) {
         if (i == idx) continue;
         double dist = std::sqrt(std::pow(data[i].first - data[idx].first, 2) + std::pow(data[i].second - data[idx].second, 2));
-        if (dist < eps) {
+        if (++compareCnt && dist < eps) {
             matches.push_back(std::make_pair(i, dist));
         }
     }

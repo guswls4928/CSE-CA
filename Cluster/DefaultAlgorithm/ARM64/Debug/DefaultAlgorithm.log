@@ -4,7 +4,6 @@
   JAVA_HOME=C:\Program Files\Android\jdk\jdk-8.0.302.8-hotspot\jdk8u302-b08
   NDK_ROOT=C:\\Microsoft\AndroidNDK\android-ndk-r23c
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
-  pch.h
   algoWrapper.cpp
   In file included from algoWrapper.cpp:1:
 ./SampleImplementation.h(27,21): warning : implicit conversion from 'double' to 'int' changes value from 5.888 to 5 [-Wliteral-conversion]
@@ -22,33 +21,5 @@ algoWrapper.cpp(70,28): warning : 'convertVector' has C-linkage specified, but r
   4 warnings generated.
   clusterInterface.cpp
   DBSCAN.cpp
-  SampleImplementation.h
-SampleImplementation.h(27,21): warning : implicit conversion from 'double' to 'int' changes value from 5.888 to 5 [-Wliteral-conversion]
-          b.elapsed = 5.888;
-                    ~ ^~~~~
-SampleImplementation.h(46,23): warning : implicit conversion from 'double' to 'int' changes value from 3.65 to 3 [-Wliteral-conversion]
-          ret.elapsed = 3.65;
-                      ~ ^~~~
-  2 warnings generated.
-  ld: error: duplicate symbol: ImgCluster::Point::toVector()
-  >>> defined at clusterInterface.cpp:7
-  >>>            ARM64\Debug\clusterInterface.o:(ImgCluster::Point::toVector())
-  >>> defined at clusterInterface.cpp:7 (.\clusterInterface.cpp:7)
-  >>>            ARM64\Debug\DBSCAN.o:(.text+0xFC)
-  ld: error: duplicate symbol: ImgCluster::Point::operator-(ImgCluster::Vector&)
-  >>> defined at clusterInterface.cpp:4
-  >>>            ARM64\Debug\clusterInterface.o:(ImgCluster::Point::operator-(ImgCluster::Vector&))
-  >>> defined at clusterInterface.cpp:4 (.\clusterInterface.cpp:4)
-  >>>            ARM64\Debug\DBSCAN.o:(.text+0x0)
-  ld: error: duplicate symbol: ImgCluster::Point::operator-(ImgCluster::Point&)
-  >>> defined at clusterInterface.cpp:6
-  >>>            ARM64\Debug\clusterInterface.o:(ImgCluster::Point::operator-(ImgCluster::Point&))
-  >>> defined at clusterInterface.cpp:6 (.\clusterInterface.cpp:6)
-  >>>            ARM64\Debug\DBSCAN.o:(.text+0xA8)
-  ld: error: duplicate symbol: ImgCluster::Point::operator+(ImgCluster::Vector&)
-  >>> defined at clusterInterface.cpp:5
-  >>>            ARM64\Debug\clusterInterface.o:(ImgCluster::Point::operator+(ImgCluster::Vector&))
-  >>> defined at clusterInterface.cpp:5 (.\clusterInterface.cpp:5)
-  >>>            ARM64\Debug\DBSCAN.o:(.text+0x54)
-  clang: error: linker command failed with exit code 1 (use -v to see invocation)
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Application Type\Android\3.0\Android.Common.targets(125,5): error MSB6006: "clang.exe"이(가) 종료되었습니다(코드: 1).
+clang : error : no such file or directory: 'DBSCAN.cpp'
+clang : error : no input files
