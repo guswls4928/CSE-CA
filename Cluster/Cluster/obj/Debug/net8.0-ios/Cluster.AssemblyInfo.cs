@@ -17,8 +17,8 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("Cluster")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cluster")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows10.0.19041.0")]
-[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows10.0.17763.0")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("ios0.0")]
+[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("ios11.0")]
 
 // MSBuild WriteCodeFragment 클래스에서 생성되었습니다.
 
