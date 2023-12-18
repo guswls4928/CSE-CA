@@ -2212,3 +2212,5 @@ C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\bin\Debug\net8.0-android\Platforms\Android\native-libs\arm64-v8a\libKMEANS.so
+C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\bin\Debug\net8.0-android\Platforms\Android\native-libs\arm64-v8a\libKMEANS.so.recipe

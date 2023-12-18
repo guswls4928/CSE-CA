@@ -4,7 +4,6 @@
     <ClCompile Include="clusterInterface.cpp" />
     <ClCompile Include="SampleImplementation.h" />
     <ClCompile Include="algoWrapper.cpp" />
-    <ClCompile Include="DBSCAN.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

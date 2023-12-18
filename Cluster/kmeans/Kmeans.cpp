@@ -3,6 +3,9 @@
 //
 #include "Kmeans.h"
 
+Kmeans::Kmeans() {
+}
+
 Benchmark Kmeans::init(const Images &imageList, unsigned int screenWidth, unsigned int screenHeight){
     auto start = std::chrono::high_resolution_clock::now();
     this->screenWidth = screenWidth;
@@ -50,7 +53,7 @@ void Kmeans::findTargetImgList(const Rectangle &screenRegion) {
         // 위 조건을 만족하면 target으로 지정.
         if (flag) {
             //targetImgList.push_back(img);
-            targetImgMap[targetImgSize++] = std::pair(img, -1);
+            targetImgMap[targetImgSize++] = std::pair<ImgCluster::ImageNode,int>(img, -1);
         }
     }
     selectClusterCenter(screenRegion);
@@ -101,7 +104,7 @@ void Kmeans::selectClusterCenter(const Rectangle &screenRegion){
                 tmpCluster.count = 1;
                 tmpCluster.repr = tmpImg;
                 clusterList.push_back(tmpCluster);
-                meanPosition.push_back(std::pair(0,0));
+                meanPosition.push_back(std::pair<double, double>(0,0));
             }
         }
         clusterSize = clusterList.size();

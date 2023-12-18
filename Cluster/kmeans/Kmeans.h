@@ -2,14 +2,14 @@
 // Created by 임준영 on 2023/12/10.
 //
 
+
+#ifndef ALGORITHM_PROJECT_KMEANS_H
+#define ALGORITHM_PROJECT_KMEANS_H
 #include "clusterInterface.h"
 #include <chrono>
 #include <map>
 #include <cmath>
-
-#ifndef ALGORITHM_PROJECT_KMEANS_H
-#define ALGORITHM_PROJECT_KMEANS_H
-
+#include <utility>
 using namespace ImgCluster;
 
 class Kmeans {
@@ -25,7 +25,6 @@ private:
     int compareCnt = 0;
     int targetImgSize;
     int clusterSize = 0;
-    const Rectangle screenRegion;
     ImageClusters clusterList;
 
     unsigned int screenWidth;
@@ -43,6 +42,7 @@ private:
     double calculateDeviation();
     ImageNode findNearestImg(double x, double y);
 public:
+    Kmeans();
     Benchmark init(const Images& imageList, unsigned int screenWidth, unsigned int screenHeight);
     Benchmark iterate(const Rectangle& screenRegion) ;
 

@@ -3,10 +3,11 @@
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="clusterInterface.h" />
+    <ClInclude Include="DBSCAN.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DBSCAN.cpp" />
     <ClCompile Include="algoWrapper.cpp" />
     <ClCompile Include="clusterInterface.cpp" />
+    <ClCompile Include="DBSCAN.cpp" />
   </ItemGroup>
 </Project>

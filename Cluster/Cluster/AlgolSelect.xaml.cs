@@ -18,7 +18,7 @@ public partial class AlgolSelect : ContentPage
     public AlgolSelect()
     {
         InitializeComponent();
-        algorithmPicker.ItemsSource = new List<string> { "Default" }; // Populate with actual algorithm names
+        algorithmPicker.ItemsSource = new List<string> { "Default", "Kmeans" }; // Populate with actual algorithm names
     }
 
     private async void OnLoadButtonClicked(object sender, EventArgs e)
@@ -113,6 +113,9 @@ public partial class AlgolSelect : ContentPage
         {
             case 0:
                 algol = new AlgorithmInterface(new Extern.Default());
+                break;
+            case 1:
+                algol = new AlgorithmInterface(new Extern.Kmeans());
                 break;
             default:
                 _tcs.SetResult(null);
