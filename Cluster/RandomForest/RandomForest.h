@@ -18,7 +18,7 @@ class RandomForest{
         unsigned int screenWidth;
         unsigned int screenHeight;
         clock_t start, end;
-
+        vector<vector<int>> clusterAssignments;
         unsigned int cnt;
 
         int numTrees = 3;

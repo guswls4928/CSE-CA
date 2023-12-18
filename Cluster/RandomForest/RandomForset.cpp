@@ -7,6 +7,8 @@ Benchmark RandomForest::init(const Images& imageList, unsigned long mapWidth, un
     this->mapHeight = mapHeight;
     this->mapWidth = mapWidth;
     cnt = 0;
+
+    clusterAssignments.resize(numTrees, vector<int>(data.size(), 0));
     
     Benchmark res;
     res.compareCnt = 0;
@@ -64,8 +66,6 @@ int RandomForest::assignToCluster(const Point point){
 }
 
 void RandomForest::randomForestClustering(){
-    vector<vector<int>> clusterAssignments(numTrees, vector<int>(data.size(), 0));
-
     for (int tree = 0; tree < numTrees; ++tree) {
         initializeClusters();
 
@@ -87,7 +87,21 @@ void RandomForest::randomForestClustering(){
 }
 
 double RandomForest::calDev(){
-    return 0;
+    int cluster;
+    double distx = 0;
+    double disty = 0;
+    for(int i = 0; i < data.size(); i++){
+        cluster = clusterAssignments[0][i];
+        distx += abs(centers[i].pos.x - data[i].pos.x);
+        disty += abs(centers[i].pos.y - data[i].pos.y);
+    }
+    distx /= data.size();
+    disty /= data.size();
+    double diff = 0;
+    for(int i = 0; i < data.size(); i++){
+        diff += pow(distx - data[i].pos.x, 2) + pow(disty - data[i].pos.y, 2);
+    }
+    return sqrt(diff);
 }
 
 Benchmark RandomForest::iterate(const Rectangle &screenRegion){
