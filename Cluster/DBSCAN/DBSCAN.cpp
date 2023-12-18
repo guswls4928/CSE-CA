@@ -2,14 +2,13 @@
 #include <chrono>
 #include <cmath>
 class DBSCAN : ImgCluster::ClusterAlgorithm {
-    // TODO: need to set eps value
 public:
     DBSCAN(ImgCluster::Images& images, ImgCluster::Rectangle& rect, int minPts, double eps);
     ImageClusters dbscan(ImgCluster::Rectangle& rect, double eps, int minPts, int& compareCnt);
     void radiusSearch(const Images& data, int idx, double eps, std::vector<std::pair<int, double>>& matches, int& compareCnt);
     void idxToPos(std::vector<std::vector<int>> idx, ImgCluster::ImageClusters clusters);
 
-    virtual void findTargetImgList(const Rectangle& screenRegion);
+    virtual int findTargetImgList(const Rectangle& screenRegion);
 
     virtual Benchmark init(const Images& imageList, unsigned int screenWidth, unsigned int screenHeight);
     virtual Benchmark iterate(const Rectangle& screenRegion);
@@ -35,7 +34,7 @@ void DBSCAN::idxToPos(std::vector<std::vector<int>> idx, ImgCluster::ImageCluste
 }
 
 // copy from Kmeans.cpp
-void DBSCAN::findTargetImgList(const Rectangle& screenRegion) {
+int DBSCAN::findTargetImgList(const Rectangle& screenRegion) {
     targetImgList.clear();
 
     /*
@@ -53,6 +52,11 @@ void DBSCAN::findTargetImgList(const Rectangle& screenRegion) {
     // ¿ìÇÏ´Ü
     Point rightBotPoint(screenRegion.x + screenRegion.w, screenRegion.y + screenRegion.h);
 
+    int laxis = screenRegion.x > screenRegion.y ? screenRegion.x : screenRegion.y;
+    int saxis = screenRegion.x < screenRegion.y ? screenRegion.x : screenRegion.y;
+
+    int eps = saxis / 3; // set eps as 1/3 of smaller axis
+
     bool flag = false;
     for (auto iter : imageList) {
         flag = false;
@@ -67,6 +71,7 @@ void DBSCAN::findTargetImgList(const Rectangle& screenRegion) {
             targetImgList.push_back(img);
         }
     }
+    return eps;
 }
 
 Benchmark DBSCAN::init(const Images& imageList, unsigned int screenWidth, unsigned int screenHeight) {
@@ -83,9 +88,9 @@ Benchmark DBSCAN::init(const Images& imageList, unsigned int screenWidth, unsign
     benchmark.clusters.clear();
 
     Rectangle rect = Rectangle(0, 0, screenWidth, screenHeight);
-    findTargetImgList(rect);
+    int eps = findTargetImgList(rect);
     int compareCnt = 0;
-    ImageClusters cl = dbscan(rect, 1, 1, compareCnt);
+    ImageClusters cl = dbscan(rect, eps, 1, compareCnt);
 
     end = std::chrono::high_resolution_clock::now();
 
@@ -93,7 +98,7 @@ Benchmark DBSCAN::init(const Images& imageList, unsigned int screenWidth, unsign
     benchmark.clusters = cl;
     benchmark.maxNodes = targetImgList.size();
     benchmark.compareCnt = compareCnt;
-    // TODO: need to set compareCnt, deviation in benchmark
+    // TODO: need to set deviation in benchmark
     return benchmark;
 };
 
@@ -109,10 +114,10 @@ Benchmark DBSCAN::iterate(const Rectangle& screenRegion) {
     benchmark.deviation = 0;
     benchmark.clusters.clear();
 
-    findTargetImgList(screenRegion);
+    int eps = findTargetImgList(screenRegion);
     Rectangle rect = screenRegion;
     int compareCnt = 0;
-    ImageClusters cl = dbscan(rect, 1, 1, compareCnt);
+    ImageClusters cl = dbscan(rect, eps, 1, compareCnt);
 
     end = std::chrono::high_resolution_clock::now();
 
