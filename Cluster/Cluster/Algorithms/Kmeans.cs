@@ -37,6 +37,9 @@ namespace Extern
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
         public static partial void DeleteAlgorithm(IntPtr algoClass);
 
+        [LibraryImport(LibraryName0)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int noTest(IntPtr algoClass);
 
         public Kmeans()
         {

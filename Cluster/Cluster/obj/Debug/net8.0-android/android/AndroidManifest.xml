@@ -19,7 +19,7 @@
     <!-- Needs to be explicitly declared on Android R+ -->
     <package android:name="com.google.android.apps.maps" />
   </queries>
-  <application android:name="crc64397fdd619fef3e57.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/appicon" android:label="Cluster" android:supportsRtl="true">
+  <application android:name="crc64397fdd619fef3e57.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:label="Cluster" android:supportsRtl="true">
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyB9cZJ7GYN13LuF4nrVV4J3ZDravBzyPWE" />
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
     <activity android:name="crc64397fdd619fef3e57.MainActivity" android:configChanges="density|orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:theme="@style/Maui.SplashTheme">

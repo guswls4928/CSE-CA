@@ -34,11 +34,23 @@
     <AppxPackagedFile Include="C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Cluster.dll">
       <PackagePath>Cluster.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\Platforms\Android\native-libs\arm64-v8a\libDBSCAN.so">
+      <PackagePath>Platforms\Android\native-libs\arm64-v8a\libDBSCAN.so</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\Platforms\Android\native-libs\arm64-v8a\libDBSCAN.so.recipe">
+      <PackagePath>Platforms\Android\native-libs\arm64-v8a\libDBSCAN.so.recipe</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\Platforms\Android\native-libs\arm64-v8a\libDefaultAlgorithm.so">
       <PackagePath>Platforms\Android\native-libs\arm64-v8a\libDefaultAlgorithm.so</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\Platforms\Android\native-libs\arm64-v8a\libDefaultAlgorithm.so.recipe">
       <PackagePath>Platforms\Android\native-libs\arm64-v8a\libDefaultAlgorithm.so.recipe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\Platforms\Android\native-libs\arm64-v8a\libKMEANS.so">
+      <PackagePath>Platforms\Android\native-libs\arm64-v8a\libKMEANS.so</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\Platforms\Android\native-libs\arm64-v8a\libKMEANS.so.recipe">
+      <PackagePath>Platforms\Android\native-libs\arm64-v8a\libKMEANS.so.recipe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mh7cp\Desktop\projects_inprogress\Algo\CSE-CA\Cluster\Cluster\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Cluster.exe</PackagePath>

@@ -108,13 +108,17 @@ extern "C" {
             //return new int[4];
         }
 
-        SAMPLE testFunc(double p1, double p2) { 
+        SAMPLE testFunc(double p1, double p2) {
             SAMPLE t;
             t.a = p1;
             t.c = p2;
-            t.b = 7;
+            t.b = 90;
 
             return t;
+        }
+
+        int noTest(void* algoClass) {
+            return ((Kmeans*)algoClass)->getNo();
         }
 
         Benchmark InitAlgorithm(ImgArray imageList, unsigned int screenWidth, unsigned int screenHeight, void* algoClass) {

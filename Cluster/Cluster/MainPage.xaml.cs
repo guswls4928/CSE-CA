@@ -173,6 +173,9 @@ namespace Cluster
                         OverlayCanvas.Children.Clear();
                         var initret = returnedAlgol.Initialize(returnedList, (uint)DisplayMap.Width, (uint)DisplayMap.Height);
                         var inititer = returnedAlgol.Iterate(DisplayMap.VisibleRegion);
+
+                        var t = Extern.Kmeans.testFunc(2.2, 3.3);
+                        int tst = Extern.Kmeans.noTest(returnedAlgol.clusterAlgorithm._algorithmInstance);
                         SetInvokeStatus(initret, true);
                         AddPins(inititer);
                     }

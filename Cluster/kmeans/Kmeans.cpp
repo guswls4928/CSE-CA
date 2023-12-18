@@ -26,6 +26,8 @@ Benchmark Kmeans::init(const Images &imageList, unsigned int screenWidth, unsign
     return ret;
 }
 
+int Kmeans::getNo() { return imgList.size(); }
+
 void Kmeans::findTargetImgList(const Rectangle &screenRegion) {
     //targetImgList.clear();
     targetImgMap.clear();

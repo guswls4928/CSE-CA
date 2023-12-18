@@ -1,10 +1,12 @@
-..\platforms\android\native-libs\arm64-v8a\libkmeans.so.recipe
+..\cluster\platforms\android\native-libs\arm64-v8a\libkmeans.so.recipe
 c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\pch.h.gch
-c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\clusterinterface.o
 c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\algowrapper.o
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\clusterinterface.o
 c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\kmeans.o
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\libkmeans.so
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\cluster\platforms\android\native-libs\arm64-v8a\libkmeans.so
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\kmeans.tlog\cl.items.tlog
 c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\kmeans.tlog\clang.command.1.tlog
-c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\kmeans.tlog\clang.read.1.tlog
 c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\kmeans.tlog\kmeans.write.1u.tlog
 c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\kmeans.tlog\microsoft.build.cpptasks.clangcompile.read.1.tlog
 c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\kmeans\arm64\debug\kmeans.tlog\microsoft.build.cpptasks.clangcompile.write.1.tlog

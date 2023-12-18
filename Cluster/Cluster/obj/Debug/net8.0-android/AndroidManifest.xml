@@ -10,7 +10,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-  <application android:allowBackup="true" android:icon="@mipmap/appicon" android:supportsRtl="true" android:name="crc64397fdd619fef3e57.MainApplication" android:label="Cluster" android:debuggable="true" android:extractNativeLibs="true">
+  <application android:allowBackup="true" android:supportsRtl="true" android:name="crc64397fdd619fef3e57.MainApplication" android:label="Cluster" android:debuggable="true" android:extractNativeLibs="true">
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyB9cZJ7GYN13LuF4nrVV4J3ZDravBzyPWE" />
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
     <activity android:configChanges="density|orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:theme="@style/Maui.SplashTheme" android:name="crc64397fdd619fef3e57.MainActivity" android:exported="true">

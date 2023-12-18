@@ -1,0 +1,14 @@
+..\cluster\platforms\android\native-libs\arm64-v8a\libdbscan.so.recipe
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\pch.h.gch
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\algowrapper.o
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\clusterinterface.o
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\dbscan.o
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\libdbscan.so
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\cluster\platforms\android\native-libs\arm64-v8a\libdbscan.so
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\dbscan.tlog\cl.items.tlog
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\dbscan.tlog\clang.command.1.tlog
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\dbscan.tlog\dbscan.write.1u.tlog
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\dbscan.tlog\microsoft.build.cpptasks.clangcompile.read.1.tlog
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\dbscan.tlog\microsoft.build.cpptasks.clangcompile.write.1.tlog
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\dbscan.tlog\microsoft.build.cpptasks.clanglink.read.1.tlog
+c:\users\mh7cp\desktop\projects_inprogress\algo\cse-ca\cluster\dbscan\arm64\debug\dbscan.tlog\microsoft.build.cpptasks.clanglink.write.1.tlog

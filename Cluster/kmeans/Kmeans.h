@@ -41,8 +41,10 @@ private:
     double calculateManhattanDistance(Point img1, Point img2);
     double calculateDeviation();
     ImageNode findNearestImg(double x, double y);
+    
 public:
     Kmeans();
+    int getNo();
     Benchmark init(const Images& imageList, unsigned int screenWidth, unsigned int screenHeight);
     Benchmark iterate(const Rectangle& screenRegion) ;
 

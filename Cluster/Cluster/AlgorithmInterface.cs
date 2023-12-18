@@ -43,7 +43,7 @@ namespace Algorithm
 
     internal class AlgorithmInterface : IDisposable
     {
-        ClusterAlgorithmWrapper clusterAlgorithm;
+        public ClusterAlgorithmWrapper clusterAlgorithm;
         public AlgorithmInterface(ClusterAlgorithmWrapper clusterAlgorithm)
         {
             this.clusterAlgorithm = clusterAlgorithm;
