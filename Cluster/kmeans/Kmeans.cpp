@@ -48,7 +48,8 @@ void Kmeans::findTargetImgList(const Rectangle &screenRegion) {
         // img의 x좌표가 화면 내에 존재하는지?
         if (leftBotPoint.x <= img.pos.x && img.pos.x <= rightBotPoint.x ) {
             // img의 y좌표가 화면 내에 존재하는지?
-            if (leftTopPoint.y <= img.pos.y && img.pos.y <= leftBotPoint.y) flag = true;
+            //if (leftTopPoint.y <= img.pos.y && img.pos.y <= leftBotPoint.y) flag = true;
+            flag = true;
         }
         // 위 조건을 만족하면 target으로 지정.
         if (flag) {
