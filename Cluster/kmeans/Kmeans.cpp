@@ -273,7 +273,7 @@ Benchmark Kmeans::iterate(const Rectangle &screenRegion){
     ret.elapsed = static_cast<time_t>(duration.count());
     ret.compareCnt = compareCnt;
     ret.deviation = calculateDeviation();
-    ret.maxNodes = targetImgSize + targetImgSize;
+    ret.maxNodes = targetImgSize;
     ret.clusters = clusterList;
     return ret;
 }
