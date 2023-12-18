@@ -4,6 +4,63 @@ DBSCAN::DBSCAN(ImgCluster::Images& images, ImgCluster::Rectangle& rect, int minP
     screenHeight = rect.h;
     init(images, screenWidth, screenHeight);
 }
+/*
+double calculateMean(const ImgCluster::ImageClusters& clusters) {
+    double sum = 0.0;
+    int count = 0;
+    for (const auto& cluster : clusters) {
+        for (const auto& image : cluster) {
+            sum += image.value; // replace `value` with the actual attribute you want to calculate the mean for
+            count++;
+        }
+    }
+    return sum / count;
+}
+
+double calculateVariance(const ImgCluster::ImageClusters& clusters, double mean) {
+    double sum = 0.0;
+    int count = 0;
+    for (const auto& cluster : clusters) {
+        for (const auto& image : cluster) {
+            double diff = image.value - mean; // replace `value` with the actual attribute you want to calculate the variance for
+            sum += diff * diff;
+            count++;
+        }
+    }
+    return sum / count;
+}
+
+double calculateStandardDeviation(double variance) {
+    return std::sqrt(variance);
+}
+*/
+double DBSCAN::calculateDeviation(ImgCluster::Benchmark bm) {
+    double deviation = 0;
+    ImgCluster::Point meanPt;
+
+    for(int i = 0; i < clusterImgList.size(); i++) { // i: cluster index
+//      for(int j = 0; j < clusterImgList[i].size(); j++) { // j: image index in cluster
+//          meanPt.x += clusterImgList[i][0].pos.x;
+//		    meanPt.y += clusterImgList[i][0].pos.y;
+//	    }
+//      meanPt.x /= clusterImgList[i].size();
+//      meanPt.y /= clusterImgList[i].size();
+
+        meanPt = bm.clusters[i].pos;
+
+        ImgCluster::Point diffPt;
+        for (int j = 0; j < clusterImgList[i].size(); j++) {
+            diffPt.x += std::pow(clusterImgList[i][j].pos.x - meanPt.x, 2);
+            diffPt.y += std::pow(clusterImgList[i][j].pos.y - meanPt.y, 2);
+        }
+
+        deviation += std::sqrt(diffPt.x + diffPt.y);
+	}
+
+    deviation /= clusterImgList.size();
+
+    return deviation;
+}
 
 void DBSCAN::idxToPos(std::vector<std::vector<int>> idx, ImgCluster::ImageClusters clusters) {
     for (auto i : idx) { // i: vector<int> representing image index in cluster
@@ -81,11 +138,12 @@ ImgCluster::Benchmark DBSCAN::init(const ImgCluster::Images& imageList, unsigned
 
     end = std::chrono::high_resolution_clock::now();
 
+
     benchmark.elapsed = static_cast<time_t>((end - start).count());
     benchmark.clusters = cl;
+    benchmark.deviation = calculateDeviation(benchmark); // need to run after set benchmark.clusters
     benchmark.maxNodes = targetImgList.size();
     benchmark.compareCnt = compareCnt;
-    // TODO: need to set deviation in benchmark
     return benchmark;
 };
 
@@ -111,6 +169,7 @@ ImgCluster::Benchmark DBSCAN::iterate(const ImgCluster::Rectangle& screenRegion)
 
     benchmark.elapsed = static_cast<time_t>((end - start).count());
     benchmark.clusters = cl;
+    benchmark.deviation = calculateDeviation(benchmark); // need to run after set benchmark.clusters
     benchmark.compareCnt = compareCnt;
     benchmark.maxNodes = targetImgList.size();
 
@@ -148,6 +207,7 @@ ImgCluster::ImageClusters DBSCAN::dbscan(ImgCluster::Rectangle& rect, double eps
         }
         clusters.push_back(cluster);
     }
+
     ImgCluster::ImageClusters imgClusters;
     idxToPos(clusters, imgClusters);
 
