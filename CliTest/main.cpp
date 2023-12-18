@@ -47,13 +47,12 @@ int main() {
 
     cout<<"Screen Width:"; cin>>sWidth;
     cout<<"Screen Height:"; cin>>sHeight;
-    //read to sWidth and sHeight for each
 
     while(1){
         int mode;
         ImgCluster::ClusterAlgorithm algol;
         cout<<"Select Algorithm: 1(Kmeans) 2(Dbscan) 3(RandomForest):";
-        //read to mode
+        cin>>mode;
 
         switch(mode){
             //set algol to respective algorithm class
